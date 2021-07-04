@@ -5,11 +5,12 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-public class tag {
+public class groupPost {
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "groupTag")
-    private long groupTag;
+    @Column(name = "groupPost")
+    private long groupPost;
 
 }
