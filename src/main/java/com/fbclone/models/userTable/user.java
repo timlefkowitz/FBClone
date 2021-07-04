@@ -27,19 +27,19 @@ public class user {
     private String lastName
 
 @Column(nullable = false, length = 100)
-userName
+Private String userName
 
 @Column(nullable = false, length = 100)
-Email
+Private String Email
 
 @Column(nullable = false, length = 100)
-Password Hash
+Private String PasswordHash
 
 @Column(nullable = false, length = 100)
-Registered At
+Private String RegisteredAt
 
 @Column(nullable = false, length = 100)
-Last Login
+Private String Last Login
 
 @Column(nullable = false, length = 100)
 Intro
