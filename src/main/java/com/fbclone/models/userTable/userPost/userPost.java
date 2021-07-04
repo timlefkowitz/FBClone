@@ -14,10 +14,14 @@ public class userPost {
     @Column(name = "userPost")
     private long userPost;
 
-Id
-Post Id
-Key
-Content
+    @Colum (name="postId")
+    Private PostId
+
+@Column(name ="key")
+Private long key
+
+@Column(name="content")
+Private String content
 
 
 
