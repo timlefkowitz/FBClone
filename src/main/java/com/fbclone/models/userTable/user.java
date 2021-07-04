@@ -14,4 +14,18 @@ public class user {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user")
     private long user;
+
+// trying to get work done on the via/bus haha
+
+    @Column(nullable = false, length = 100)
+    private String firstName
+
+    @Column(nullable = false, length = 100)
+    private String middleName
+
+        @Column(nullable = false, length = 100)
+    private String lastName
+
+
+    
 }
