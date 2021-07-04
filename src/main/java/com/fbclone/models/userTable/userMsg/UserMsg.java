@@ -13,4 +13,14 @@ public class UserMsg {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "UserMsg")
     private long UserMsg;
+
+
+Id
+Source Id
+Target Id
+Message
+Created At
+Updated At
+
+
 }
