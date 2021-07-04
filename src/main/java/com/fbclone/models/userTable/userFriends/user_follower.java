@@ -13,4 +13,14 @@ public class user_follower {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_follower")
     private long user_follower;
+
+
+Id
+Source Id
+Target Id
+Type
+Created At
+Updated At
+
+
 }
