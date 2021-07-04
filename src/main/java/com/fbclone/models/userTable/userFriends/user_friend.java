@@ -14,13 +14,22 @@ public class user_friend {
     @Column(name = "user_friend")
     private long user_friend;
 
+    @Column(nullable = false, length = 100)
+    private long sourceId;
 
-Id
-Source Id
-Target Id
-Type
-Created At
-Updated At
+    @Column(nullable = false, length = 100)
+    private long targetId;
+
+    @Column(nullable = false, length = 100)
+    private String type;
+
+    @Column(nullable = false, length = 100)
+    private String createdAt;
+
+    @Column(nullable = false, length = 100)
+    private String updatedAt;
+
+
 
 
 }
