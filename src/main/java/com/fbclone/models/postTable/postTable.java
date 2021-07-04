@@ -13,4 +13,20 @@ public class postTable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "postTable")
     private long postTable;
+
+
+Id
+Author Id
+Parent Id
+Title
+Meta Title
+Slug
+Summary
+Published
+Created At
+Updated At
+Published At
+Content
+
+
 }
