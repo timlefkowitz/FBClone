@@ -12,15 +12,20 @@ public class groupFollower {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "groupFollower")
-    private long groupFollower;
+    @Column(name = "groupId")
+    private long groupId;
 
+    @Column(nullable = false, length = 100)
+    private long userId;
 
-    Group Id
-    User Id
-    Type
-    Created At
-    Updated At
+    @Column(nullable = false, length = 100)
+    private String type;
+
+    @Column(nullable = false, length = 100)
+    private String createdAt;
+
+    @Column(nullable = false, length = 100)
+    private String updatedAt;
 
 
 
