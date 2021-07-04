@@ -14,19 +14,40 @@ public class postTable {
     @Column(name = "postTable")
     private long postTable;
 
+    @Column(nullable = false, length = 100)
+    private long authorId ;
 
-Id
-Author Id
-Parent Id
-Title
-Meta Title
-Slug
-Summary
-Published
-Created At
-Updated At
-Published At
-Content
+    @Column(nullable = false, length = 100)
+    private String parentId ;
+
+    @Column(nullable = false, length = 100)
+    private String title ;
+
+    @Column(nullable = false, length = 100)
+    private String metaTitle ;
+
+    @Column(nullable = false, length = 100)
+    private String slug ;
+
+    @Column(nullable = false, length = 100)
+    private String summary ;
+
+    @Column(nullable = false, length = 100)
+    private String  published;
+
+    @Column(nullable = false, length = 100)
+    private String createdAt;
+
+    @Column(nullable = false, length = 100)
+    private String updatedAt ;
+
+    @Column(nullable = false, length = 100)
+    private String publishedAt;
+
+    @Column(nullable = false, length = 100)
+    private String content;
+
+
 
 
 }
