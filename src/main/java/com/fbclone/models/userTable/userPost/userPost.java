@@ -9,19 +9,22 @@ import javax.persistence.*;
 @Data
 @Table(name="userPost")
 public class userPost {
+
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userPost")
     private long userPost;
 
-    @Colum (name="postId")
-    Private PostId
+    @Column (nullable = false, length = 100)
+    private long postId;
 
-@Column(name ="key")
-Private long key
+    @Column(nullable = false, length = 100)
+    private long key;
 
-@Column(name="content")
-Private String content
+    @Column(nullable = false, length = 100)
+    private String content;
 
 
 
