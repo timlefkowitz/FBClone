@@ -14,13 +14,20 @@ public class user_follower {
     @Column(name = "user_follower")
     private long user_follower;
 
+    @Column(nullable = false, length = 100)
+    private long sourceId;
 
-Id
-Source Id
-Target Id
-Type
-Created At
-Updated At
+    @Column(nullable = false, length = 100)
+    private long targetId;
+
+    @Column(nullable = false, length = 100)
+    private String type;
+
+    @Column(nullable = false, length = 100)
+    private String CreatedAt;
+
+    @Column(nullable = false, length = 100)
+    private long updatedAt;
 
 
 }
