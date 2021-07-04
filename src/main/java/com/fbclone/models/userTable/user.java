@@ -18,40 +18,40 @@ public class user {
 // trying to get work done on the via/bus haha
 
     @Column(nullable = false, length = 100)
-    private String firstName
+    private String firstName;
 
     @Column(nullable = false, length = 100)
-    private String middleName
+    private String middleName;
 
     @Column(nullable = false, length = 100)
-    private String lastName
+    private String lastName;
 
-@Column(nullable = false, length = 100)
-Private String userName
+    @Column(nullable = false, length = 100)
+    private String userName;
 
-@Column(nullable = false, length = 100)
-Private String Email
+    @Column(nullable = false, length = 100)
+    private String email;
 
-@Column(nullable = false, length = 100)
-Private String PasswordHash
+    @Column(nullable = false, length = 100)
+    private String passwordHash;
 
-@Column(nullable = false, length = 100)
-Private String RegisteredAt
+    @Column(nullable = false, length = 100)
+    private String registeredAt;
 
-@Column(nullable = false, length = 100)
-Private String Last Login
+    @Column(nullable = false, length = 100)
+    private String lastLogin;
 
-@Column(nullable = false, length = 100)
-Intro
+    @Column(nullable = false, length = 100)
+    private String intro;
 
-@Column(nullable = false, length = 100)
-Profile
+    @Column(nullable = false, length = 100)
+    private String profile;
 
-@Column(nullable = false, length = 100)
-Mobile
+    @Column(nullable = false, length = 100)
+    private long mobile;
 
-@Column(nullable = false, length = 100)
-Status
+    @Column(nullable = false, length = 100)
+    private String status;
 
 
 

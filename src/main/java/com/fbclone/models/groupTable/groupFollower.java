@@ -15,4 +15,13 @@ public class groupFollower {
     @Column(name = "groupFollower")
     private long groupFollower;
 
+
+    Group Id
+    User Id
+    Type
+    Created At
+    Updated At
+
+
+
 }
