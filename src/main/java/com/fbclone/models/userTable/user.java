@@ -23,18 +23,34 @@ public class user {
     @Column(nullable = false, length = 100)
     private String middleName
 
-        @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 100)
     private String lastName
 
-
+@Column(nullable = false, length = 100)
 userName
+
+@Column(nullable = false, length = 100)
 Email
+
+@Column(nullable = false, length = 100)
 Password Hash
+
+@Column(nullable = false, length = 100)
 Registered At
+
+@Column(nullable = false, length = 100)
 Last Login
+
+@Column(nullable = false, length = 100)
 Intro
+
+@Column(nullable = false, length = 100)
 Profile
+
+@Column(nullable = false, length = 100)
 Mobile
+
+@Column(nullable = false, length = 100)
 Status
 
 
