@@ -13,4 +13,13 @@ public class userPost {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "userPost")
     private long userPost;
+
+Id
+Post Id
+Key
+Content
+
+
+
+
 }
