@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name="")
+@Table(name="GroupMessage")
 public class GroupMessage {
 
 

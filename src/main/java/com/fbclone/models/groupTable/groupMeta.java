@@ -7,7 +7,7 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name="")
+@Table(name="groupMeta")
 public class groupMeta {
 
     @Id

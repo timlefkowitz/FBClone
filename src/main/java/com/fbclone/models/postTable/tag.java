@@ -7,10 +7,15 @@ import javax.persistence.*;
 
 @Entity
 @Data
-@Table(name="")
+@Table(name="tag")
 public class tag {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "tag")
     private long tag;
+
+
+
 }
