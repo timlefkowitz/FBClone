@@ -27,5 +27,17 @@ public class user {
     private String lastName
 
 
+userName
+Email
+Password Hash
+Registered At
+Last Login
+Intro
+Profile
+Mobile
+Status
+
+
+
     
 }
