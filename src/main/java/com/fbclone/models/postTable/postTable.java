@@ -3,6 +3,7 @@ package com.fbclone.models.postTable;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 
 @Entity
@@ -33,16 +34,16 @@ public class postTable {
     private String summary ;
 
     @Column(nullable = false, length = 100)
-    private String  published;
+    private String published;
 
     @Column(nullable = false, length = 100)
-    private String createdAt;
+    private Timestamp createdAt;
 
     @Column(nullable = false, length = 100)
-    private String updatedAt ;
+    private Timestamp updatedAt ;
 
     @Column(nullable = false, length = 100)
-    private String publishedAt;
+    private Timestamp publishedAt;
 
     @Column(nullable = false, length = 100)
     private String content;
