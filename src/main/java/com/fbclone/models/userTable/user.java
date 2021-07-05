@@ -4,6 +4,7 @@ package com.fbclone.models.userTable;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Data
@@ -36,10 +37,10 @@ public class user {
     private String passwordHash;
 
     @Column(nullable = false, length = 100)
-    private String registeredAt;
+    private Timestamp registeredAt;
 
     @Column(nullable = false, length = 100)
-    private String lastLogin;
+    private Timestamp lastLogin;
 
     @Column(nullable = false, length = 100)
     private String intro;
