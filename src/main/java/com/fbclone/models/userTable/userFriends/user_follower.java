@@ -3,6 +3,7 @@ package com.fbclone.models.userTable.userFriends;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 
 @Entity
@@ -24,10 +25,10 @@ public class user_follower {
     private String type;
 
     @Column(nullable = false, length = 100)
-    private String CreatedAt;
+    private Timestamp CreatedAt;
 
     @Column(nullable = false, length = 100)
-    private long updatedAt;
+    private Timestamp updatedAt;
 
 
 }
