@@ -3,6 +3,7 @@ package com.fbclone.models.userTable.userMsg;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 
 @Entity
@@ -24,9 +25,9 @@ public class UserMsg {
     private String message;
 
     @Column(nullable = false, length = 100)
-    private String createdAt;
+    private Timestamp createdAt;
 
     @Column(nullable = false, length = 100)
-    private String updatedAt;
+    private Timestamp updatedAt;
 
 }
