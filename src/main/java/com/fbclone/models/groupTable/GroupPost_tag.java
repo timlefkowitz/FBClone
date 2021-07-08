@@ -1,12 +1,10 @@
 package com.fbclone.models.groupTable;
 
-import lombok.Data;
 
 import javax.persistence.*;
 
 
 @Entity
-@Data
 @Table(name="post_Tag")
 public class post_tag {
 
