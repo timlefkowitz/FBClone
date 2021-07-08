@@ -14,4 +14,13 @@ public class groupMeta {
     @Column(name = "groupMeta")
     private long groupMeta;
 
+    @Column(name = "groupId")
+    private String groupId;
+
+    @Column(name = "key")
+    private long key;
+
+    @Column(name = "content")
+    private String content;
+
 }

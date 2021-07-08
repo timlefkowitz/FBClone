@@ -3,6 +3,7 @@ package com.fbclone.models.groupTable;
 
 
 import javax.persistence.*;
+import java.sql.Timestamp;
 
 @Entity
 @Table(name="groupFollower")
@@ -11,6 +12,9 @@ public class groupFollower {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
+    private long id;
+
     @Column(name = "groupId")
     private long groupId;
 
@@ -21,10 +25,10 @@ public class groupFollower {
     private String type;
 
     @Column(nullable = false, length = 100)
-    private String createdAt;
+    private Timestamp createdAt;
 
     @Column(nullable = false, length = 100)
-    private String updatedAt;
+    private Timestamp updatedAt;
 
 
 
