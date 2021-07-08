@@ -5,8 +5,8 @@ import javax.persistence.*;
 
 
 @Entity
-@Table(name="post_Tag")
-public class post_tag {
+@Table(name="GroupPost_Tag")
+public class GroupPost_tag {
 
 
     @Id

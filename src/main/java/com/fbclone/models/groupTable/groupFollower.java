@@ -1,11 +1,10 @@
 package com.fbclone.models.groupTable;
 
-import lombok.Data;
+
 
 import javax.persistence.*;
 
 @Entity
-@Data
 @Table(name="groupFollower")
 public class groupFollower {
 

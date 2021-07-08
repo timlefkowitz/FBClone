@@ -1,13 +1,12 @@
 package com.fbclone.models.userTable.userFriends;
 
-import lombok.Data;
+
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 
 @Entity
-@Data
 @Table(name="user_follower")
 public class user_follower {
     @Id

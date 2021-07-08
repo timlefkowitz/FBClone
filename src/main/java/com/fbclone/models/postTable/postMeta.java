@@ -1,12 +1,11 @@
 package com.fbclone.models.postTable;
 
-import lombok.Data;
+
 
 import javax.persistence.*;
 
 
 @Entity
-@Data
 @Table(name="postMeta")
 public class postMeta {
 
@@ -14,4 +13,15 @@ public class postMeta {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "postMeta")
     private long postMeta;
+
+    @Column(name = "userPostId")
+    private long userPostId;
+
+    @Column(name = "userPostkey")
+    private long userPostkey;
+
+    @Column(name = "userPostContent")
+    private long userPostContent;
+
+
 }

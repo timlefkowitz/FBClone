@@ -1,13 +1,12 @@
 package com.fbclone.models.userTable.userMsg;
 
-import lombok.Data;
+
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 
 @Entity
-@Data
 @Table(name="userMsg")
 public class UserMsg {
     @Id

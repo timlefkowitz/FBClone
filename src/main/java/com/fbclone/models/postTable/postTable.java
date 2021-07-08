@@ -1,13 +1,12 @@
 package com.fbclone.models.postTable;
 
-import lombok.Data;
+
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 
 @Entity
-@Data
 @Table(name="postTable")
 public class postTable {
     @Id

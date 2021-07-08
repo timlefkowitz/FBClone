@@ -6,8 +6,8 @@ import javax.persistence.*;
 
 @Entity
 
-@Table(name="tag")
-public class tag {
+@Table(name="UserPostTag")
+public class UserPostTag {
 
 
     @Id

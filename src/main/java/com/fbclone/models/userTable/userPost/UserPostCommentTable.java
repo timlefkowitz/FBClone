@@ -1,12 +1,10 @@
 package com.fbclone.models.userTable.userPost;
 
-import lombok.Data;
 
 import javax.persistence.*;
 
 
 @Entity
-@Data
 @Table(name="UserPostCommentTable")
 public class UserPostCommentTable {
 
