@@ -13,8 +13,8 @@ public class groupPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "groupPost")
-    private long groupPost;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "groupId")
     private long groupId;

@@ -12,8 +12,8 @@ public class groupTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "groupTable")
-    private long groupTable;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "CreatedBy")
     private long CreatedBy;
