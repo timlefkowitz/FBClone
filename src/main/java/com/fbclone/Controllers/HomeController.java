@@ -11,8 +11,20 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class HomeController {
 
     @GetMapping("/")
+    public String landingpage(Model view)
+    {
+        return "LandingPage";
+    }
+
+    @GetMapping("/home")
     public String home(Model view)
     {
         return "home";
+    }
+
+    @GetMapping("/SignUp")
+    public String signup(Model view)
+    {
+        return "Signup";
     }
 }
