@@ -12,6 +12,10 @@ import java.sql.Timestamp;
 @Table(name="postTable")
 public class postTable {
 
+    public postTable(){
+
+    }
+
 
 
     @Id
@@ -57,7 +61,7 @@ public class postTable {
 
     // Insert Constructor
 
-    public postTable(long authorId, String parentId, String title, String metaTitle, String slug, String summary, String published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content, user user) {
+    public postTable(long authorId, long parentId, String title, String metaTitle, String slug, String summary, String published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content, user user) {
         this.authorId = authorId;
         this.parentId = parentId;
         this.title = title;
@@ -75,7 +79,7 @@ public class postTable {
 
     // read Constructor
 
-    public postTable(long id, long authorId, String parentId, String title, String metaTitle, String slug, String summary, String published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content, user owner) {
+    public postTable(long id, long authorId, long parentId, String title, String metaTitle, String slug, String summary, String published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content, user owner) {
         this.id = id;
         this.authorId = authorId;
         this.parentId = parentId;
@@ -140,11 +144,11 @@ public class postTable {
         this.authorId = authorId;
     }
 
-    public String getParentId() {
+    public long getParentId() {
         return parentId;
     }
 
-    public void setParentId(String parentId) {
+    public void setParentId(long parentId) {
         this.parentId = parentId;
     }
 

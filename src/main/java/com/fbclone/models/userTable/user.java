@@ -94,6 +94,13 @@ public class user {
         this.status = status;
     }
 
+
+    // Create a group constructor
+    public user(long createdBy, long updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, Timestamp updatedAt, String profile, String content) {
+    }
+
+
+
     public long getId() {
         return id;
     }

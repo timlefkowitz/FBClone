@@ -19,7 +19,7 @@ public class groupTable {
     private long CreatedBy;
 
     @Column(name = "UpdatedBy")
-    private Timestamp updatedBy;
+    private long updatedBy;
 
     @Column(name = "title")
     private String title;
