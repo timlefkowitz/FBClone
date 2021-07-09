@@ -56,12 +56,13 @@ public class postTable {
     @Column(nullable = false, length = 100)
     private String content;
 
-    @OneToOne
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "owner", nullable = false)
     private user owner;
 
     // Insert Constructor
 
-    public postTable(long authorId, long parentId, String title, String metaTitle, String slug, String summary, String published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content, user user) {
+    public postTable(long authorId, long parentId, String title, String metaTitle, String slug, String summary, String published, Timestamp createdAt, Timestamp updatedAt, Timestamp publishedAt, String content, user owner) {
         this.authorId = authorId;
         this.parentId = parentId;
         this.title = title;
@@ -73,7 +74,7 @@ public class postTable {
         this.updatedAt = updatedAt;
         this.publishedAt = publishedAt;
         this.content = content;
-        this.owner = user;
+        this.owner = owner;
     }
 
 
