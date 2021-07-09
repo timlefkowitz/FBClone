@@ -1,8 +1,10 @@
 package com.fbclone.Controllers;
 
 
+import com.fbclone.Repos.UserRepos;
 import com.fbclone.Repos.postTableRepo;
 import com.fbclone.models.postTable.postTable;
+import com.fbclone.models.userTable.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,10 +17,12 @@ public class PostController {
 
 
     @Autowired
-    private final postTableRepo postDao;
+    private postTableRepo postDao;
+    private UserRepos usersDao;
 
-    public PostController(postTableRepo postDao) {
+    public PostController(postTableRepo postDao, UserRepos usersDao) {
         this.postDao = postDao;
+        this.usersDao = usersDao;
     }
 
 
@@ -38,6 +42,7 @@ public class PostController {
 
                                 )
     {
+        user user = usersDao.getById(1L);
         postTable newPost = new postTable(title, description);
         postTable savePost = postDao.save(newPost);
         return "redirect:/home" + savePost.getId();
