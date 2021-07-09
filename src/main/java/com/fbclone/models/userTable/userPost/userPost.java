@@ -26,12 +26,56 @@ public class userPost {
 
     //Insert Constructor
 
+    public userPost( long postId, long key, String content) {
+        this.postId = postId;
+        this.key = key;
+        this.content = content;
+    }
+
+    public userPost(){
+
+    }
 
 
     //Update Constructor
 
 
+    public userPost(long id, long postId, long key, String content) {
+        this.id = id;
+        this.postId = postId;
+        this.key = key;
+        this.content = content;
+    }
 
+    public long getId() {
+        return id;
+    }
 
+    public void setId(long id) {
+        this.id = id;
+    }
 
+    public long getPostId() {
+        return postId;
+    }
+
+    public void setPostId(long postId) {
+        this.postId = postId;
+    }
+
+    public long getKey() {
+        return key;
+    }
+
+    public void setKey(long key) {
+        this.key = key;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
 }
