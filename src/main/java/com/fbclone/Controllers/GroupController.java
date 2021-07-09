@@ -3,6 +3,7 @@ package com.fbclone.Controllers;
 
 import com.fbclone.Repos.GroupRepo;
 import com.fbclone.Repos.UserRepos;
+import com.fbclone.models.groupTable.groupTable;
 import com.fbclone.models.userTable.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -27,7 +28,7 @@ public class GroupController {
     // Create a group
     @GetMapping("/createAgroup")
     public String signup(@RequestParam(name = "createdBy") long createdBy,
-                         @RequestParam(name = "updatedBy") long updatedBy,
+                         @RequestParam(name = "updatedBy") String updatedBy,
                          @RequestParam(name = "title") String title,
                          @RequestParam(name = "metaTitle") String metaTitle,
                          @RequestParam(name = "slug") String slug,
@@ -40,8 +41,8 @@ public class GroupController {
 
     )
     {
-        user newUser = new user(createdBy, updatedBy, title, metaTitle, slug, summary, status, createdAt, updatedAt, profile, content);
-        user saveNewUser = userDao.save(newUser);
+        groupTable newGroup = new groupTable(createdBy, title, metaTitle, slug, summary, status, createdAt, profile, content);
+        groupTable saveNewUser = groupDao.save(newGroup);
         return "redirect:/home" + saveNewUser.getId();
     }
 

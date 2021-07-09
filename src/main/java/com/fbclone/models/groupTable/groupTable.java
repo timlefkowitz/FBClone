@@ -1,6 +1,8 @@
 package com.fbclone.models.groupTable;
 
 
+import com.fbclone.models.userTable.user;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -19,9 +21,9 @@ public class groupTable {
     private long CreatedBy;
 
     @Column(name = "UpdatedBy")
-    private long updatedBy;
+    private String updatedBy;
 
-    @Column(name = "title")
+    @Column(nullable = false, name = "title")
     private String title;
 
     @Column(name = "metaTitle")
@@ -30,7 +32,7 @@ public class groupTable {
     @Column(name = "slug")
     private String slug;
 
-    @Column(name = "summary")
+    @Column(nullable = false, name = "summary")
     private String summary;
 
     @Column(name = "status")   // new, approved active or blocked
@@ -42,16 +44,19 @@ public class groupTable {
     @Column(name = "updatedAt")
     private String updatedAt;
 
-    @Column(name = "profile")
+    @Column(nullable = false, name = "profile")
     private String profile;
 
-    @Column(name = "content")
+    @Column(nullable = false, name = "content")
     private String content;
+
+    @OneToMany
+    private user owners;
 
 
     // Insert Constructor
 
-    public groupTable(long createdBy, Timestamp updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String updatedAt, String profile, String content) {
+    public groupTable(long createdBy, String updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String updatedAt, String profile, String content) {
         CreatedBy = createdBy;
         this.updatedBy = updatedBy;
         this.title = title;
@@ -69,7 +74,7 @@ public class groupTable {
     // Update Constructor
 
 
-    public groupTable(long id, long createdBy, Timestamp updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String updatedAt, String profile, String content) {
+    public groupTable(long id, long createdBy, String updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String updatedAt, String profile, String content) {
         this.id = id;
         CreatedBy = createdBy;
         this.updatedBy = updatedBy;
@@ -82,6 +87,11 @@ public class groupTable {
         this.updatedAt = updatedAt;
         this.profile = profile;
         this.content = content;
+    }
+
+    //Create a group
+
+    public groupTable(long createdBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String profile, String content) {
     }
 
     public long getId() {
@@ -100,11 +110,11 @@ public class groupTable {
         CreatedBy = createdBy;
     }
 
-    public Timestamp getUpdatedBy() {
+    public String getUpdatedBy() {
         return updatedBy;
     }
 
-    public void setUpdatedBy(Timestamp updatedBy) {
+    public void setUpdatedBy(String updatedBy) {
         this.updatedBy = updatedBy;
     }
 

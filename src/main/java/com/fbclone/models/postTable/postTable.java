@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 
-@Entity
+@Entity // << this is how hibernate knows to make tables out of the class
 @Table(name="postTable")
 public class postTable {
 
@@ -32,25 +32,25 @@ public class postTable {
     @Column(nullable = false, length = 100)
     private String title ;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String metaTitle ;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String slug ;
 
     @Column(nullable = false, length = 100)
     private String summary ;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String published;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private Timestamp createdAt;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private Timestamp updatedAt ;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private Timestamp publishedAt;
 
     @Column(nullable = false, length = 100)

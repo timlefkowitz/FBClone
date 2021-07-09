@@ -5,7 +5,7 @@ package com.fbclone.models.userTable;
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Entity
+@Entity // << this is how hibernate knows to make tables out of the class
 @Table(name="user")
 public class user {
 
@@ -23,38 +23,42 @@ public class user {
     @Column(nullable = false, length = 100)
     private String firstName;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 20)
     private String middleName;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 20)
     private String lastName;
+
 
     @Column(nullable = false, length = 100)
     private String userName;
 
-    @Column(nullable = false, length = 100)
+    @Column(nullable = false, length = 20)
     private String email;
 
     @Column(nullable = false, length = 100)
     private String passwordHash;
 
-    @Column(nullable = false, length = 10)
+    @Column(length = 10)
     private Timestamp registeredAt;
 
-    @Column(nullable = false, length = 10)
+    @Column(length = 10)
     private Timestamp lastLogin;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String intro;
 
     @Column(nullable = false)
     private String profile;
 
-    @Column(nullable = false, length = 16)
+    @Column(length = 16)
     private long mobile;
 
-    @Column(nullable = false, length = 30)
+    @Column(length = 30)
     private String status;
+
+
+
 
 
 
