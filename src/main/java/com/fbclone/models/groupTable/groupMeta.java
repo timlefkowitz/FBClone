@@ -11,8 +11,8 @@ public class groupMeta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "groupMeta")
-    private long groupMeta;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "groupId")
     private String groupId;
@@ -22,5 +22,12 @@ public class groupMeta {
 
     @Column(name = "content")
     private String content;
+
+
+
+    //Insert Constructor
+
+    //Update Constructor
+
 
 }

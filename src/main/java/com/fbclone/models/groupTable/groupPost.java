@@ -2,6 +2,8 @@ package com.fbclone.models.groupTable;
 
 
 
+import com.fbclone.models.userTable.user;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -30,5 +32,18 @@ public class groupPost {
 
     @Column(name = "updatedAt")
     private Timestamp updatedAt;
+
+
+    @OneToOne
+    private user owner;
+
+
+
+
+    //Insert Constructor
+
+    //Update Constructor
+
+
 
 }

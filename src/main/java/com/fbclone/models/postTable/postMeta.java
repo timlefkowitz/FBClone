@@ -11,8 +11,8 @@ public class postMeta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "postMeta")
-    private long postMeta;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "userPostId")
     private long userPostId;
@@ -22,6 +22,11 @@ public class postMeta {
 
     @Column(name = "userPostContent")
     private long userPostContent;
+
+
+    //Insert Constructor
+
+    //Update Constructor
 
 
 }

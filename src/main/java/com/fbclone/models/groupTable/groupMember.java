@@ -12,8 +12,8 @@ public class groupMember {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "groupMember")
-    private long groupMember;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "groupId")
     private long groupId;
@@ -36,6 +36,8 @@ public class groupMember {
     @Column(name = "notes")
     private String notes;
 
+    //Insert Constructor
 
+    //Update Constructor
 
 }

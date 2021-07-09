@@ -31,5 +31,8 @@ public class groupFollower {
     private Timestamp updatedAt;
 
 
+    //Insert Constructor
+
+    //Update Constructor
 
 }

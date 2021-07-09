@@ -10,8 +10,8 @@ public class UserPostCommentTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "UserPostCommentTable")
-    private long UserPostCommentTable;
+    @Column(name = "id")
+    private long id;
 
     @Column (nullable = false, length = 100)
     private long postId;
@@ -33,6 +33,11 @@ public class UserPostCommentTable {
 
     @Column(nullable = false, length = 100)
     private String content;
+
+
+    //Insert Constructor
+
+    //Update Constructor
 
 
 }

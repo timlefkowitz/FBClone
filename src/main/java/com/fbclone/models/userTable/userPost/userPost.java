@@ -12,8 +12,8 @@ public class userPost {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "userPost")
-    private long userPost;
+    @Column(name = "id")
+    private long id;
 
     @Column (nullable = false, length = 100)
     private long postId;
@@ -23,6 +23,13 @@ public class userPost {
 
     @Column(nullable = false, length = 100)
     private String content;
+
+    //Insert Constructor
+
+
+
+    //Update Constructor
+
 
 
 

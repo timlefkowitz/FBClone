@@ -10,8 +10,8 @@ import java.sql.Timestamp;
 public class user_friend {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "user_friend")
-    private long user_friend;
+    @Column(name = "id")
+    private long id;
 
     @Column(nullable = false, length = 100)
     private long sourceId;
@@ -27,6 +27,11 @@ public class user_friend {
 
     @Column(nullable = false, length = 100)
     private Timestamp updatedAt;
+
+
+    //Insert Constructor
+
+    //Update Constructor
 
 
 

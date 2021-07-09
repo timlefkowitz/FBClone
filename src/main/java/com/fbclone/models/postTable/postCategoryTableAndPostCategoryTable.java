@@ -12,8 +12,8 @@ public class postCategoryTableAndPostCategoryTable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "postCategories")
-    private long postCategories;
+    @Column(name = "id")
+    private long id;
 
     @Column(name = "ParentId")
     private long ParentId;
@@ -30,4 +30,12 @@ public class postCategoryTableAndPostCategoryTable {
 
     @Column(name = "content")
     private long content;
+
+
+    //Insert Constructor
+
+    //Update Constructor
+
+
+
 }

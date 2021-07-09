@@ -12,8 +12,13 @@ public class UserPostTag {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "tag")
-    private long tag;
+    @Column(name = "id")
+    private long id;
+
+
+    //Insert Constructor
+
+
 
 
 

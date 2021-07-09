@@ -31,4 +31,8 @@ public class GroupMessage {
     private long updatedAt;
 
 
+    //Insert Constructor
+
+    //Update Constructor
+
 }
