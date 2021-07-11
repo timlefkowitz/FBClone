@@ -57,6 +57,12 @@ public class userProfile {
     @Column(name = "status", length = 30)
     private String status;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userProfile")
+    private user user;
+
+
+    // Inseret Constructor
+
 
     public userProfile(String firstName, String middleName, String lastName, String userName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status) {
         this.firstName = firstName;
@@ -71,6 +77,26 @@ public class userProfile {
         this.profile = profile;
         this.mobile = mobile;
         this.status = status;
+    }
+
+    // Update constructor
+
+
+    public userProfile(long id, String firstName, String middleName, String lastName, String userName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status, com.fbclone.models.userTable.user user) {
+        this.id = id;
+        this.firstName = firstName;
+        this.middleName = middleName;
+        this.lastName = lastName;
+        this.userName = userName;
+        this.email = email;
+        this.passwordHash = passwordHash;
+        this.registeredAt = registeredAt;
+        this.lastLogin = lastLogin;
+        this.intro = intro;
+        this.profile = profile;
+        this.mobile = mobile;
+        this.status = status;
+        this.user = user;
     }
 
     public long getId() {

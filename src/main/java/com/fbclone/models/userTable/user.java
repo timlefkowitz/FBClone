@@ -50,7 +50,7 @@ public class user {
     @Column(name = "intro", length = 100)
     private String intro;
 
-    @Column(name = "profile",)
+    @Column(name = "profile")
     private String profile;
 
     @Column(name = "mobile", length = 16)
@@ -71,7 +71,7 @@ public class user {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "up_ip")
-    private ProfileController userProfile;
+    private userProfile userProfile;
 
 
 
