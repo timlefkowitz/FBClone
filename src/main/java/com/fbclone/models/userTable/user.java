@@ -75,7 +75,7 @@ public class user {
     private userProfile userProfile;
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "up_id")
+    @JoinColumn(name = "user_message_id")
     private UserMsg UserMsg;
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
