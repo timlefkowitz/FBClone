@@ -43,7 +43,7 @@ public class PostController {
                                 )
     {
         user user = usersDao.getById(1L);
-        postTable newPost = new postTable(title, description);
+        postTable newPost = new postTable(title, description, user);
         postTable savePost = postDao.save(newPost);
         return "redirect:/home" + savePost.getId();
 

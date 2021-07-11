@@ -98,6 +98,9 @@ public class postTable {
     public postTable(String title, String description) {
     }
 
+    public postTable(String title, String description, user owner) {
+    }
+
 
     // Update Constructor
 

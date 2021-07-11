@@ -36,6 +36,10 @@ public class UserController {
                          @RequestParam(name = "status") String status
                          )
     {
+
+        ///             in the future we will use the current logged in user.
+
+        user user = userDao.getById(1l);
         user newUser = new user(userName, firstName, middleName, lastName, email, passwordHash, registeredAt, lastLogin, intro, profile, mobile, status);
         user saveNewUser = userDao.save(newUser);
         return "redirect:/home" + saveNewUser.getId();
