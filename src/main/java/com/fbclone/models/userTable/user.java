@@ -224,4 +224,28 @@ public class user {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public String getGender() {
+        return gender;
+    }
+
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
+
+    public LocalDate getDateOfBirth() {
+        return dateOfBirth;
+    }
+
+    public void setDateOfBirth(LocalDate dateOfBirth) {
+        this.dateOfBirth = dateOfBirth;
+    }
+
+    public com.fbclone.models.userTable.userProfile getUserProfile() {
+        return userProfile;
+    }
+
+    public void setUserProfile(com.fbclone.models.userTable.userProfile userProfile) {
+        this.userProfile = userProfile;
+    }
 }
