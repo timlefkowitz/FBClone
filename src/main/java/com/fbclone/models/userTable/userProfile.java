@@ -202,4 +202,12 @@ public class userProfile {
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public user getUser() {
+        return user;
+    }
+
+    public void setUser(user user) {
+        this.user = user;
+    }
 }
