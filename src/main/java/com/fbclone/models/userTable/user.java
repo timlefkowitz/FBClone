@@ -6,6 +6,7 @@ import com.fbclone.Controllers.ProfileController;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 
 @Entity // << this is how hibernate knows to make tables out of the class
 @Table(name="user")
@@ -57,6 +58,16 @@ public class user {
 
     @Column(name = "status", length = 30)
     private String status;
+
+    // Adding some columns i missed \
+
+    @Column(name = "gender", length = 30)
+    private String gender;
+
+    @Column(name = "dateOfBirth")
+    private LocalDate dateOfBirth;
+
+
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "up_ip")
