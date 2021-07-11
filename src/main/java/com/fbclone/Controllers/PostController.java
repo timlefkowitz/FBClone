@@ -43,8 +43,10 @@ public class PostController {
     {
 
         // In the future we want to update this to the current user
-        postTable post = postDao.getById(1L);
+
+//        postTable postTable = postDao.getById(1L);
         postTable newPost = new postTable(title, description, user);
+//        <<<   inputing user here is not working but i'm focused on creating a user so brb
         postTable savePost = postDao.save(newPost);
         return "redirect:/home" + savePost.getId();
 

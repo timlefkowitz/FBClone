@@ -1,12 +1,17 @@
 package com.fbclone.models.userTable.userPost;
 
 
+import com.fbclone.models.userTable.user;
+
 import javax.persistence.*;
 
 
 @Entity
 @Table(name="userPost")
 public class userPost {
+
+
+
 
 
 
@@ -23,6 +28,11 @@ public class userPost {
 
     @Column(nullable = false, length = 100)
     private String content;
+
+
+    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "owner", nullable = false)
+    private user owner;
 
     //Insert Constructor
 

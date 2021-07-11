@@ -34,14 +34,22 @@ public class UserController {
                          @RequestParam(name = "intro") String intro,
                          @RequestParam(name = "profile") String profile,
                          @RequestParam(name = "mobile") long mobile,
-                         @RequestParam(name = "status") String status
-                         )
+                         @RequestParam(name = "status") String status, Model adduser
+    )
     {
 
-        ///             in the future we will use the current logged in user.
+        ///      EXAMPLE AREA       in the future we will use the current logged in user.
 
-        user user = userDao.getById(1l);
+//        user user = userDao.getById(1l);
         user newUser = new user(userName, firstName, middleName, lastName, email, passwordHash, registeredAt, lastLogin, intro, profile, mobile, status);
+
+        // We need to do our sets
+        newUser.setFirstName(firstName);
+        newUser.setMiddleName(middleName);
+        newUser.setLastName(lastName);
+        newUser.setUserName(userName);
+        newUser.setPasswordHash(passwordHash);
+
         user saveNewUser = userDao.save(newUser);
         return "redirect:/home" + saveNewUser.getId();
     }
