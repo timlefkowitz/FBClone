@@ -1,19 +1,18 @@
 package com.fbclone.models.userTable;
 
-
-
-import com.fbclone.Controllers.ProfileController;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
-@Entity // << this is how hibernate knows to make tables out of the class
-@Table(name="user")
-public class user {
 
-    public user() {
+
+@Entity
+@Table(name = "userProfile")
+public class userProfile {
+
+    public userProfile(){
 
     }
+
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +21,7 @@ public class user {
 
 // trying to get work done on the via/bus haha
 
-    @Column(name = "firstName", length = 100)
+    @Column(name = "firstName", length = 20)
     private String firstName;
 
     @Column(name = "middleName", length = 20)
@@ -49,7 +48,7 @@ public class user {
     @Column(name = "intro", length = 100)
     private String intro;
 
-    @Column(name = "profile",)
+    @Column(name = "profile")
     private String profile;
 
     @Column(name = "mobile", length = 16)
@@ -58,18 +57,8 @@ public class user {
     @Column(name = "status", length = 30)
     private String status;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "up_ip")
-    private ProfileController userProfile;
 
-
-
-
-
-
-    // Insert Constructor
-
-    public user(String firstName, String middleName, String lastName, String userName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status) {
+    public userProfile(String firstName, String middleName, String lastName, String userName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status) {
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -83,32 +72,6 @@ public class user {
         this.mobile = mobile;
         this.status = status;
     }
-
-
-    // update Constructor
-
-    public user(long id, String firstName, String middleName, String lastName, String userName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status) {
-        this.id = id;
-        this.firstName = firstName;
-        this.middleName = middleName;
-        this.lastName = lastName;
-        this.userName = userName;
-        this.email = email;
-        this.passwordHash = passwordHash;
-        this.registeredAt = registeredAt;
-        this.lastLogin = lastLogin;
-        this.intro = intro;
-        this.profile = profile;
-        this.mobile = mobile;
-        this.status = status;
-    }
-
-
-    // Create a group constructor
-    public user(long createdBy, long updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, Timestamp updatedAt, String profile, String content) {
-    }
-
-
 
     public long getId() {
         return id;
