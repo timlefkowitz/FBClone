@@ -2,6 +2,7 @@ package com.fbclone.models.groupTable;
 
 
 import com.fbclone.models.userTable.user;
+import com.fbclone.models.userTable.userProfile;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -50,8 +51,13 @@ public class groupTable {
     @Column(nullable = false, name = "content")
     private String content;
 
-    @OneToMany
-    private user owners;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "Group_Table")
+//    private userProfile groupTable;
+
+//    @OneToMany
+//    private user owners;
 
 
     // Insert Constructor

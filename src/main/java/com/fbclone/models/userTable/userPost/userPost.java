@@ -30,9 +30,9 @@ public class userPost {
     private String content;
 
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "owner", nullable = false)
-    private user owner;
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "owner", nullable = false)
+//    private user owner;
 
     //Insert Constructor
 

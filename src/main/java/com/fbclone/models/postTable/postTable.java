@@ -55,9 +55,9 @@ public class postTable {
     @Column(nullable = false, length = 100)
     private String content;
 
-    @ManyToOne(fetch = FetchType.LAZY, optional = false)
-    @JoinColumn(name = "owner", nullable = false)
-    private user owner;
+//    @ManyToOne(fetch = FetchType.LAZY, optional = false)
+//    @JoinColumn(name = "owner", nullable = false)
+//    private user owner;
 
     // Insert Constructor
 
@@ -73,7 +73,7 @@ public class postTable {
         this.updatedAt = updatedAt;
         this.publishedAt = publishedAt;
         this.content = content;
-        this.owner = owner;
+//        this.owner = owner;
     }
 
 
@@ -92,7 +92,7 @@ public class postTable {
         this.updatedAt = updatedAt;
         this.publishedAt = publishedAt;
         this.content = content;
-        this.owner = owner;
+//        this.owner = owner;
     }
 
     public postTable(String title, String description) {
@@ -127,13 +127,13 @@ public class postTable {
     }
 
 
-    public user getOwner() {
-        return owner;
-    }
-
-    public void setOwner(user owner) {
-        this.owner = owner;
-    }
+//    public user getOwner() {
+//        return owner;
+//    }
+//
+//    public void setOwner(user owner) {
+//        this.owner = owner;
+//    }
 
     public void setId(long id) {
         this.id = id;

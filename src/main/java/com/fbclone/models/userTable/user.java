@@ -3,6 +3,7 @@ package com.fbclone.models.userTable;
 
 
 import com.fbclone.Controllers.ProfileController;
+import com.fbclone.models.userTable.userMsg.UserMsg;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -72,6 +73,14 @@ public class user {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "up_ip")
     private userProfile userProfile;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "up_id")
+    private UserMsg UserMsg;
+
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "up_id")
+//    private userProfile user_Friend;
 
 
 
