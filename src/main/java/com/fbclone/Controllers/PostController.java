@@ -31,7 +31,6 @@ public class PostController {
                                 @RequestParam(name = "description") String description,
                                 @RequestParam(name = "authorId") long authorId,
                                 @RequestParam(name = "parentId") long parentId,
-                                @RequestParam(name = "metaTitle") String metaTitle,
                                 @RequestParam(name = "slug") String slug,
                                 @RequestParam(name = "summary") String summary,
                                 @RequestParam(name = "published") String published,
