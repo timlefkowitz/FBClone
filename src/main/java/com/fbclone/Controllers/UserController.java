@@ -5,6 +5,7 @@ import com.fbclone.Repos.UserRepos;
 import com.fbclone.models.userTable.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -43,5 +44,14 @@ public class UserController {
         user newUser = new user(userName, firstName, middleName, lastName, email, passwordHash, registeredAt, lastLogin, intro, profile, mobile, status);
         user saveNewUser = userDao.save(newUser);
         return "redirect:/home" + saveNewUser.getId();
+    }
+
+
+    @GetMapping("/showUsers")
+    public String showUsers(Model viewallusers)
+    {
+        viewallusers.addAttribute("allusers", userDao.findAll());
+        return "admin/showAllusers";
+
     }
 }
