@@ -42,6 +42,8 @@ public class PostController {
 
                                 )
     {
+
+        // In the future we want to update this to the current user
         postTable post = postDao.getById(1L);
         postTable newPost = new postTable(title, description, user);
         postTable savePost = postDao.save(newPost);
