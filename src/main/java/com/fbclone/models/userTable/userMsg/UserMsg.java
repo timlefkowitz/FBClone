@@ -37,33 +37,33 @@ public class UserMsg {
     private Timestamp updatedAt;
 
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "UserMsg")
-    private user owner;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "UserMsg")
+//    private user owner;
 
 
     //Insert Constructor
 
-    public UserMsg(long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt, user owner) {
+    public UserMsg(long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt) {
         this.sourceId = sourceId;
         this.targetId = targetId;
         this.message = message;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.owner = owner;
+        ;
     }
 
 
     //Update Constructor
 
 
-    public UserMsg(long id, long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt, user owner) {
+    public UserMsg(long id, long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.sourceId = sourceId;
         this.targetId = targetId;
         this.message = message;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.owner = owner;
+
     }
 
     public long getId() {
@@ -114,11 +114,11 @@ public class UserMsg {
         this.updatedAt = updatedAt;
     }
 
-    public user getOwner() {
-        return owner;
-    }
-
-    public void setOwner(user owner) {
-        this.owner = owner;
-    }
+//    public user getOwner() {
+//        return owner;
+//    }
+//
+//    public void setOwner(user owner) {
+//        this.owner = owner;
+//    }
 }

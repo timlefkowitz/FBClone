@@ -119,6 +119,10 @@
                         <div th:text="${''}">ID</div>
                         <div th:text="${''}">Username</div>
                     </div>
+
+                    <div th:each="imgs: ${'userPost.imgs'}">
+                        <img th:src="${imgs.path}" th:alt="${imgs.description}">
+                    </div>
                 </tr>
                 </thead>
                 <tbody>
