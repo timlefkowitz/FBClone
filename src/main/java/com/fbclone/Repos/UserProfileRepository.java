@@ -1,8 +1,7 @@
 package com.fbclone.Repos;
 
 
-import com.fbclone.models.userTable.userProfile;
-import com.mysql.cj.jdbc.JdbcPreparedStatement;
+import com.fbclone.models.RelationshipHome.userTable.userProfile;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

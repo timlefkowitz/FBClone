@@ -1,7 +1,7 @@
-package com.fbclone.models.postTable;
+package com.fbclone.models.RelationshipHome.postTable;
 
 
-import com.fbclone.models.userTable.userPost.userPost;
+import com.fbclone.models.RelationshipHome.userTable.userPost.userPost;
 
 import javax.persistence.*;
 

@@ -1,18 +1,16 @@
-package com.fbclone.models.userTable.userMsg;
+package com.fbclone.models.RelationshipHome.userTable.userFriends;
 
 
+import com.fbclone.models.RelationshipHome.user;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 
 
 @Entity
-@Table(name="userMsg")
-public class UserMsg {
+@Table(name="user_friend")
+public class user_friend {
 
-    public UserMsg(){
-
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,8 +23,8 @@ public class UserMsg {
     @Column(nullable = false, length = 100)
     private long targetId;
 
-    @Column(nullable = false, length = 250)
-    private String message;
+    @Column(nullable = false, length = 100)
+    private String type;
 
     @Column(nullable = false, length = 100)
     private Timestamp createdAt;
@@ -34,34 +32,34 @@ public class UserMsg {
     @Column(nullable = false, length = 100)
     private Timestamp updatedAt;
 
-
-//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "UserMsg")
-//    private user owner;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userFriend")
+//    private user user_Friend;
 
 
     //Insert Constructor
 
-    public UserMsg(long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt) {
+    public user_friend(long sourceId, long targetId, String type, Timestamp createdAt, Timestamp updatedAt) {
         this.sourceId = sourceId;
         this.targetId = targetId;
-        this.message = message;
+        this.type = type;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        ;
+//        this.user_Friend = user_Friend;
     }
 
 
     //Update Constructor
 
 
-    public UserMsg(long id, long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt) {
+    public user_friend(long id, long sourceId, long targetId, String type, Timestamp createdAt, Timestamp updatedAt, user user) {
         this.id = id;
         this.sourceId = sourceId;
         this.targetId = targetId;
-        this.message = message;
+        this.type = type;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-
+//        this.user = user;
     }
 
     public long getId() {
@@ -88,12 +86,12 @@ public class UserMsg {
         this.targetId = targetId;
     }
 
-    public String getMessage() {
-        return message;
+    public String getType() {
+        return type;
     }
 
-    public void setMessage(String message) {
-        this.message = message;
+    public void setType(String type) {
+        this.type = type;
     }
 
     public Timestamp getCreatedAt() {
@@ -112,11 +110,11 @@ public class UserMsg {
         this.updatedAt = updatedAt;
     }
 
-//    public user getOwner() {
-//        return owner;
+//    public com.fbclone.models.RelationshipHome.userTable.main.user getUser() {
+//        return user;
 //    }
 //
-//    public void setOwner(user owner) {
-//        this.owner = owner;
+//    public void setUser(com.fbclone.models.RelationshipHome.userTable.main.user user) {
+//        this.user = user;
 //    }
 }

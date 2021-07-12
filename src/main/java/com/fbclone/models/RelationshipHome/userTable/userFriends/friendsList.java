@@ -1,4 +1,4 @@
-package com.fbclone.models.userTable.userFriends;
+package com.fbclone.models.RelationshipHome.userTable.userFriends;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;

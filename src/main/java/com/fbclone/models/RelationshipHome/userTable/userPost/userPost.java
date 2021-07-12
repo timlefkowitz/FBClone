@@ -1,4 +1,4 @@
-package com.fbclone.models.userTable.userPost;
+package com.fbclone.models.RelationshipHome.userTable.userPost;
 
 
 import com.fbclone.Repos.UsersPostsRepository;

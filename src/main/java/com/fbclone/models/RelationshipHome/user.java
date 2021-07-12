@@ -2,7 +2,7 @@ package com.fbclone.models.RelationshipHome;
 
 
 
-import com.fbclone.models.userTable.userPost.userPost;
+import com.fbclone.models.RelationshipHome.userTable.userPost.userPost;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -82,7 +82,7 @@ public class user {
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "up_ip")
-    private com.fbclone.models.userTable.userProfile userProfile;
+    private com.fbclone.models.RelationshipHome.userTable.userProfile userProfile;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<userPost> userPosts;
@@ -284,11 +284,11 @@ public class user {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public com.fbclone.models.userTable.userProfile getUserProfile() {
+    public com.fbclone.models.RelationshipHome.userTable.userProfile getUserProfile() {
         return userProfile;
     }
 
-    public void setUserProfile(com.fbclone.models.userTable.userProfile userProfile) {
+    public void setUserProfile(com.fbclone.models.RelationshipHome.userTable.userProfile userProfile) {
         this.userProfile = userProfile;
     }
 }

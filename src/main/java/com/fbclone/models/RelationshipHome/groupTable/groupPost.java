@@ -1,4 +1,4 @@
-package com.fbclone.models.groupTable;
+package com.fbclone.models.RelationshipHome.groupTable;
 
 
 

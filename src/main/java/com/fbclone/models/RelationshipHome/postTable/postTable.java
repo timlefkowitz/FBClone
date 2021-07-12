@@ -1,4 +1,4 @@
-package com.fbclone.models.postTable;
+package com.fbclone.models.RelationshipHome.postTable;
 
 
 

@@ -1,4 +1,4 @@
-package com.fbclone.models.userTable;
+package com.fbclone.models.RelationshipHome.userTable;
 
 import com.fbclone.models.RelationshipHome.user;
 
