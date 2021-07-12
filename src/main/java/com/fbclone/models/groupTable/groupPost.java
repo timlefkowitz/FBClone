@@ -2,8 +2,6 @@ package com.fbclone.models.groupTable;
 
 
 
-import com.fbclone.models.userTable.user;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 

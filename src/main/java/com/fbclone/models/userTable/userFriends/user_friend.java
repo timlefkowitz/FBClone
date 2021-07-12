@@ -1,6 +1,8 @@
 package com.fbclone.models.userTable.userFriends;
 
 
+import com.fbclone.models.RelationshipHome.user;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -50,7 +52,7 @@ public class user_friend {
     //Update Constructor
 
 
-    public user_friend(long id, long sourceId, long targetId, String type, Timestamp createdAt, Timestamp updatedAt, com.fbclone.models.userTable.user user) {
+    public user_friend(long id, long sourceId, long targetId, String type, Timestamp createdAt, Timestamp updatedAt, user user) {
         this.id = id;
         this.sourceId = sourceId;
         this.targetId = targetId;
@@ -108,11 +110,11 @@ public class user_friend {
         this.updatedAt = updatedAt;
     }
 
-//    public com.fbclone.models.userTable.user getUser() {
+//    public com.fbclone.models.userTable.main.user getUser() {
 //        return user;
 //    }
 //
-//    public void setUser(com.fbclone.models.userTable.user user) {
+//    public void setUser(com.fbclone.models.userTable.main.user user) {
 //        this.user = user;
 //    }
 }

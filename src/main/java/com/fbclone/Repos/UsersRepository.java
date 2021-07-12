@@ -1,6 +1,6 @@
 package com.fbclone.Repos;
 
-import com.fbclone.models.userTable.user;
+import com.fbclone.models.RelationshipHome.user;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

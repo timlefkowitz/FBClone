@@ -1,5 +1,7 @@
 package com.fbclone.models.userTable;
 
+import com.fbclone.models.RelationshipHome.user;
+
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -47,7 +49,7 @@ public class userProfile extends user{
 
     // Inseret Constructor
 
-    public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user owner, user ownerToProfile) {
+    public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, user owner, user ownerToProfile) {
         this.userBio = userBio;
         this.userProfileContent = userProfileContent;
         this.lastLogin = lastLogin;
@@ -60,7 +62,7 @@ public class userProfile extends user{
     // Update constructor
 
 
-    public userProfile(long id, String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user owner, user ownerToProfile) {
+    public userProfile(long id, String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, user owner, user ownerToProfile) {
         this.id = id;
         this.userBio = userBio;
         this.userProfileContent = userProfileContent;
@@ -117,11 +119,11 @@ public class userProfile extends user{
         this.intro = intro;
     }
 
-    public com.fbclone.models.userTable.user getOwner() {
+    public user getOwner() {
         return owner;
     }
 
-    public void setOwner(com.fbclone.models.userTable.user user) {
+    public void setOwner(user user) {
         this.owner = user;
     }
 

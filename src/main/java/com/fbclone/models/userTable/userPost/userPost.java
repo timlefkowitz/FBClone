@@ -2,9 +2,7 @@ package com.fbclone.models.userTable.userPost;
 
 
 import com.fbclone.Repos.UsersPostsRepository;
-import com.fbclone.models.postTable.userPostImgs;
-import com.fbclone.models.userTable.user;
-import org.apache.catalina.User;
+import com.fbclone.models.RelationshipHome.user;
 
 import javax.persistence.*;
 import java.util.List;

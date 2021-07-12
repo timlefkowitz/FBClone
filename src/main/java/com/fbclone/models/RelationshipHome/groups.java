@@ -1,8 +1,5 @@
-package com.fbclone.models.groupTable;
+package com.fbclone.models.RelationshipHome;
 
-
-import com.fbclone.models.userTable.user;
-import com.fbclone.models.userTable.userProfile;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -10,7 +7,7 @@ import java.sql.Timestamp;
 
 @Entity // << this is how hibernate knows to make tables out of the class
 @Table(name="groupTable")
-public class groupTable {
+public class groups {
 
 
     @Id
@@ -65,7 +62,7 @@ public class groupTable {
 
     // Insert Constructor
 
-    public groupTable(long createdBy, String updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String updatedAt, String profile, String content) {
+    public groups(long createdBy, String updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String updatedAt, String profile, String content) {
         CreatedBy = createdBy;
         this.updatedBy = updatedBy;
         this.title = title;
@@ -83,7 +80,7 @@ public class groupTable {
     // Update Constructor
 
 
-    public groupTable(long id, long createdBy, String updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String updatedAt, String profile, String content) {
+    public groups(long id, long createdBy, String updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String updatedAt, String profile, String content) {
         this.id = id;
         CreatedBy = createdBy;
         this.updatedBy = updatedBy;
@@ -100,7 +97,7 @@ public class groupTable {
 
     //Create a group
 
-    public groupTable(long createdBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String profile, String content) {
+    public groups(long createdBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, String profile, String content) {
     }
 
     public long getId() {

@@ -2,7 +2,7 @@ package com.fbclone.Controllers;
 
 
 import com.fbclone.Repos.GroupRepository;
-import com.fbclone.models.groupTable.groupTable;
+import com.fbclone.models.RelationshipHome.groups;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -38,8 +38,8 @@ public class GroupController {
 
     )
     {
-        groupTable newGroup = new groupTable(createdBy, title, metaTitle, slug, summary, status, createdAt, profile, content);
-        groupTable saveNewUser = groupDao.save(newGroup);
+        groups newGroup = new groups(createdBy, title, metaTitle, slug, summary, status, createdAt, profile, content);
+        groups saveNewUser = groupDao.save(newGroup);
         return "redirect:/home" + saveNewUser.getId();
     }
 

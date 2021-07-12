@@ -2,7 +2,7 @@ package com.fbclone.models.postTable;
 
 
 
-import com.fbclone.models.userTable.user;
+import com.fbclone.models.RelationshipHome.user;
 import javax.persistence.*;
 import java.sql.Timestamp;
 

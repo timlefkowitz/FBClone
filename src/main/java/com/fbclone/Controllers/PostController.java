@@ -4,7 +4,7 @@ package com.fbclone.Controllers;
 import com.fbclone.Repos.UsersRepository;
 import com.fbclone.Repos.UsersPostsRepository;
 import com.fbclone.models.postTable.postTable;
-import com.fbclone.models.userTable.user;
+import com.fbclone.models.RelationshipHome.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

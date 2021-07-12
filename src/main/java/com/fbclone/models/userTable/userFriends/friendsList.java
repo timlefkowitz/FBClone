@@ -2,7 +2,7 @@ package com.fbclone.models.userTable.userFriends;
 
 
 import com.fasterxml.jackson.annotation.JsonManagedReference;
-import com.fbclone.models.userTable.user;
+import com.fbclone.models.RelationshipHome.user;
 import javax.persistence.*;
 
 @Entity

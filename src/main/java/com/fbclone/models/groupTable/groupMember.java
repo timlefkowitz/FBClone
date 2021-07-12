@@ -2,7 +2,7 @@ package com.fbclone.models.groupTable;
 
 
 
-import com.fbclone.models.userTable.user;
+import com.fbclone.models.RelationshipHome.user;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -48,7 +48,7 @@ public class groupMember {
 
     //Insert Constructor
 
-    public groupMember(long groupId, long userId, String roleId, String status, Timestamp createdAt, Timestamp updatedAt, String notes, com.fbclone.models.userTable.user user) {
+    public groupMember(long groupId, long userId, String roleId, String status, Timestamp createdAt, Timestamp updatedAt, String notes, user user) {
         this.groupId = groupId;
         this.userId = userId;
         this.roleId = roleId;
@@ -61,7 +61,7 @@ public class groupMember {
 
     //Update Constructor
 
-    public groupMember(long id, long groupId, long userId, String roleId, String status, Timestamp createdAt, Timestamp updatedAt, String notes, com.fbclone.models.userTable.user user) {
+    public groupMember(long id, long groupId, long userId, String roleId, String status, Timestamp createdAt, Timestamp updatedAt, String notes, user user) {
         this.id = id;
         this.groupId = groupId;
         this.userId = userId;
