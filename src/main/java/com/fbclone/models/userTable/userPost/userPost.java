@@ -41,6 +41,12 @@ public class userPost {
     @JoinColumn (name = "owner_id")
     private user owner;
 
+//    user Post images
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userPost")
+    private List<userPost> imgs;
+
+
 
 //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //    @JoinColumn(name = "owner", nullable = false)
@@ -48,10 +54,11 @@ public class userPost {
 
     //Insert Constructor
 
-    public userPost( long postId, long key, String content) {
+    public userPost( long postId, long key, String content, List<userPost> img) {
         this.postId = postId;
         this.key = key;
         this.content = content;
+        this.imgs = imgs;
     }
 
     public userPost(){
@@ -62,11 +69,12 @@ public class userPost {
     //Update Constructor
 
 
-    public userPost(long id, long postId, long key, String content) {
+    public userPost(long id, long postId, long key, String content, List<userPost> img) {
         this.id = id;
         this.postId = postId;
         this.key = key;
         this.content = content;
+        this.imgs = imgs;
     }
 
     public long getId() {
