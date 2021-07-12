@@ -108,4 +108,36 @@ public class userPost {
     public void setContent(String content) {
         this.content = content;
     }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getBody() {
+        return body;
+    }
+
+    public void setBody(String body) {
+        this.body = body;
+    }
+
+    public user getOwner() {
+        return owner;
+    }
+
+    public void setOwner(user owner) {
+        this.owner = owner;
+    }
+
+    public List<userPost> getImgs() {
+        return imgs;
+    }
+
+    public void setImgs(List<userPost> imgs) {
+        this.imgs = imgs;
+    }
 }
