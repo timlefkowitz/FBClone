@@ -169,6 +169,21 @@
         <!--  ^ End of column div     -->
 
 
+
+<!--        AN EXAMPLE-->
+
+        <th scope="col">Posts</th>
+
+        <div th:if="${'posts'}">
+            <div th:text="${'postId'}">ID</div>
+            <div th:text="${'posts.title'}">Title</div>
+            <div th:text="${'posts.owner.username'}"></div>
+        </div>
+
+
+
+        <!-- END OF REFRESH EXAMPLE -->
+
         <!--      USERS POSTS DIV   -->
         <div class="col-lg-9" style="border-color: red; border-style: solid; height:100% ">
 
