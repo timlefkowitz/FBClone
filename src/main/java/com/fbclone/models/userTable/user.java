@@ -75,20 +75,27 @@ public class user {
     @JoinColumn(name = "up_ip")
     private userProfile userProfile;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_message_id")
-    private UserMsg UserMsg;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "user_message_id")
+//    private UserMsg UserMsg;
 
 //    Friends List
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "added_user_id")
-    @JsonBackReference
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "added_user_id")
+//    @JsonBackReference
+//    private Collection<friendsList> added_user_id;
+//
+//    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendListOwner_id")
+//    @JsonBackReference
+//    private Collection<friendsList> friendsListOwner;
 
-    private Collection<friendsList> added_user_id;
+//       Groups
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupOwner")
+//    @JoinColumn(name="groupOwner")
+//    private user groupOwner;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendListOwner_id")
-    @JsonBackReference
 
-    private Collection<friendsList> friendsListOwner;
+
+
 
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

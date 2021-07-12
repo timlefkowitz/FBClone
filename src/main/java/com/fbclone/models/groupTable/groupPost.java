@@ -36,9 +36,9 @@ public class groupPost {
 
     @Column(name = "updatedAt")
     private Timestamp updatedAt;
-
-    @OneToOne
-    private user owner;
+//
+//    @OneToOne
+//    private user owner;
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupPost")
 //    private groupMember groupMember;
