@@ -2,18 +2,15 @@ package com.fbclone.models.userTable.userPost;
 
 
 import com.fbclone.models.userTable.user;
+import org.apache.catalina.User;
 
 import javax.persistence.*;
+import java.util.List;
 
 
 @Entity
 @Table(name="userPost")
 public class userPost {
-
-
-
-
-
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -34,7 +31,14 @@ public class userPost {
     @Column(length = 100)
     private String content;
 
-    @OneToOne
+    @Column(nullable = false, length = 100)
+    private String title;
+
+    @Column(nullable = false, length = 100)
+    private String body;
+
+    @ManyToOne
+    @JoinColumn (name = "owner_id")
     private user owner;
 
 
