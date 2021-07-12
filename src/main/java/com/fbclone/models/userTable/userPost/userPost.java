@@ -1,6 +1,7 @@
 package com.fbclone.models.userTable.userPost;
 
 
+import com.fbclone.Repos.UsersPostsRepository;
 import com.fbclone.models.postTable.userPostImgs;
 import com.fbclone.models.userTable.user;
 import org.apache.catalina.User;
@@ -45,7 +46,7 @@ public class userPost {
 //    user Post images
 
     @OneToOne(cascade = CascadeType.ALL, mappedBy = "userPost")
-    private List<userPost> userPost;
+    private List<UsersPostsRepository> userPost;
 
 
 
