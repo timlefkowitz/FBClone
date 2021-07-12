@@ -35,6 +35,13 @@ public class AdminController {
     @Autowired
     private final UsersRepository userDao;
 
+    public AdminController(GroupRepository groupRepositoryDao, UserProfileRepository usersProfileDao, UsersPostsRepository usersPostsDao, UsersRepository userDao) {
+        this.groupRepositoryDao = groupRepositoryDao;
+        this.usersProfileDao = usersProfileDao;
+        this.usersPostsDao = usersPostsDao;
+        this.userDao = userDao;
+    }
+
 
 //    Admin home
 

@@ -53,8 +53,9 @@ public class UserController {
         this.userDao = userDao;
     }
 
-    public UserController() {
+    public UserController(GroupRepository groupRepositoryDao) {
 
+        this.groupRepositoryDao = groupRepositoryDao;
     }
 
 

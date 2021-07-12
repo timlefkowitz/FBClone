@@ -27,7 +27,7 @@ public class ProfileController extends UserController {
     private final UserProfileRepository usersProfileDao;
 
     public ProfileController(UsersRepository userDao, UserProfileRepository usersProfileDao) {
-        super();
+        super(groupRepositoryDao);
         this.userDao = userDao;
         this.usersProfileDao = usersProfileDao;
     }

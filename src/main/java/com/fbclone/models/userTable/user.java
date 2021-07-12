@@ -2,12 +2,15 @@ package com.fbclone.models.userTable;
 
 
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fbclone.Controllers.ProfileController;
+import com.fbclone.models.userTable.userFriends.friendsList;
 import com.fbclone.models.userTable.userMsg.UserMsg;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
 import java.time.LocalDate;
+import java.util.Collection;
 
 @Entity // << this is how hibernate knows to make tables out of the class
 @Table(name="user")
@@ -68,8 +71,6 @@ public class user {
     @Column(name = "dateOfBirth", nullable = false)
     private LocalDate dateOfBirth;
 
-
-
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "up_ip")
     private userProfile userProfile;
@@ -77,6 +78,18 @@ public class user {
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @JoinColumn(name = "user_message_id")
     private UserMsg UserMsg;
+
+//    Friends List
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "added_user_id")
+    @JsonBackReference
+
+    private Collection<friendsList> added_user_id;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "friendListOwner_id")
+    @JsonBackReference
+
+    private Collection<friendsList> friendsListOwner;
+
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    @JoinColumn(name = "up_id")
