@@ -2,14 +2,13 @@ package com.fbclone.Controllers;
 
 import com.fbclone.Repos.UserProfileRepository;
 import com.fbclone.Repos.UsersRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 
 @Controller
-public class ProfileController extends UserController {
+public class ProfileController{
 
 
         /*                      Repositories
@@ -20,17 +19,16 @@ public class ProfileController extends UserController {
     []
      */
 
-    @Autowired
     private final UsersRepository userDao;
 
-    @Autowired
     private final UserProfileRepository usersProfileDao;
 
     public ProfileController(UsersRepository userDao, UserProfileRepository usersProfileDao) {
-        super(groupRepositoryDao);
         this.userDao = userDao;
         this.usersProfileDao = usersProfileDao;
     }
+
+
 
 
         /*                      GetMapping

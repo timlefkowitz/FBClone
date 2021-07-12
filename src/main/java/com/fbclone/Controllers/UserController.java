@@ -46,16 +46,13 @@ public class UserController {
     private final UsersRepository userDao;
 
 
+
     public UserController(GroupRepository groupRepositoryDao, UserProfileRepository usersProfileDao, UsersPostsRepository usersPostsDao, UsersRepository userDao) {
+
         this.groupRepositoryDao = groupRepositoryDao;
         this.usersProfileDao = usersProfileDao;
         this.usersPostsDao = usersPostsDao;
         this.userDao = userDao;
-    }
-
-    public UserController(GroupRepository groupRepositoryDao) {
-
-        this.groupRepositoryDao = groupRepositoryDao;
     }
 
 
