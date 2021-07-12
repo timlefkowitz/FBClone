@@ -1,13 +1,16 @@
 package com.fbclone.Controllers;
 
 
-import com.fbclone.Repos.UserRepos;
-import com.fbclone.Repos.postTableRepo;
+import com.fbclone.Repos.UsersRepository;
+import com.fbclone.Repos.UsersPostsRepository;
 import com.fbclone.models.postTable.postTable;
 import com.fbclone.models.userTable.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import java.sql.Timestamp;
@@ -17,13 +20,65 @@ public class PostController {
 
 
     @Autowired
-    private postTableRepo postDao;
-    private UserRepos usersDao;
+    private UsersPostsRepository postDao;
+    private UsersRepository userDao;
 
-    public PostController(postTableRepo postDao, UserRepos usersDao) {
+    public PostController(UsersPostsRepository postDao, UsersRepository userDao) {
         this.postDao = postDao;
-        this.usersDao = usersDao;
+        this.userDao = userDao;
     }
+
+
+
+
+    // Show Constructors
+
+    @GetMapping("/show")
+    public String show(Model view){
+        view.addAttribute("ads", userDao.findAll());
+        return"orders/show";
+    }
+
+    @GetMapping("/show/{id}")
+    public String showById(@PathVariable Long id, Model view){
+        view.addAttribute("ads", userDao.getById(id));
+        return "orders/show";
+    }
+
+
+    // Edit Constructors
+
+    @GetMapping("/show/{id}/edit")
+    public String viewEditForm(@PathVariable Long id, Model view)
+    {
+        view.addAttribute("ads", userDao.getById(id));
+        return "orders/edit";
+    }
+
+//    @PostMapping("show/{id}/edit")
+//    public String updateOrder(@PathVariable long id, @ModelAttribute Order orderToUpdate){
+//        userDao.save(orderToUpdate);
+//        return "redirect:/show" + orderToUpdate.getOrderNumber();
+//    }
+
+    @GetMapping("show/{id}/delete")
+    public String showdelete(@PathVariable Long id, Model view)
+    {
+        view.addAttribute("ads", userDao.getById(id));
+        return "orders/delete";
+    }
+
+    @PostMapping("show/{id}/delete")
+    public String deleteOrder(@PathVariable Long id)
+    {
+        user user = userDao.getById(id);
+        userDao.delete(user);
+        return "redirect:/show";
+    }
+
+
+
+
 
 
     @GetMapping("/userPost")

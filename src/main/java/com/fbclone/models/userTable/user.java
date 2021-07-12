@@ -24,48 +24,48 @@ public class user {
 
 // trying to get work done on the via/bus haha
 
-    @Column(name = "firstName", length = 100)
+    @Column(name = "firstName", nullable = false, length = 100)
     private String firstName;
 
-    @Column(name = "middleName", length = 20)
+    @Column(name = "middleName", nullable = true, length = 20)
     private String middleName;
 
-    @Column(name = "lastName", length = 20)
+    @Column(name = "lastName", nullable = false, length = 20)
     private String lastName;
 
-    @Column(name = "userName", length = 100)
+    @Column(name = "userName", nullable = false, length = 100)
     private String userName;
 
-    @Column(name = "email", length = 20)
+    @Column(name = "email", nullable = false, length = 20)
     private String email;
 
-    @Column(name = "passwordHash", length = 100)
+    @Column(name = "passwordHash", nullable = false,  length = 100)
     private String passwordHash;
 
-    @Column(name = "registeredAt", length = 10)
+    @Column(name = "registeredAt", nullable = false, length = 10)
     private Timestamp registeredAt;
 
-    @Column(name = "lastLogin", length = 10)
+    @Column(name = "lastLogin", nullable = false, length = 10)
     private Timestamp lastLogin;
 
-    @Column(name = "intro", length = 100)
+    @Column(name = "intro",  nullable = true , length = 100)
     private String intro;
 
-    @Column(name = "profile")
+    @Column(name = "profile", nullable = true)
     private String profile;
 
-    @Column(name = "mobile", length = 16)
+    @Column(name = "mobile", nullable = false, length = 16)
     private long mobile;
 
-    @Column(name = "status", length = 30)
+    @Column(name = "status", nullable = true, length = 30)
     private String status;
 
     // Adding some columns i missed \
 
-    @Column(name = "gender", length = 30)
+    @Column(name = "gender", length = 30, nullable = true)
     private String gender;
 
-    @Column(name = "dateOfBirth")
+    @Column(name = "dateOfBirth", nullable = false)
     private LocalDate dateOfBirth;
 
 
@@ -128,6 +128,8 @@ public class user {
     public user(long createdBy, long updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, Timestamp updatedAt, String profile, String content) {
     }
 
+    public user(String userName, String firstName, String middleName, String lastName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status, Object status1) {
+    }
 
 
     public long getId() {

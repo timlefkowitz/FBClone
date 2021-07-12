@@ -38,32 +38,32 @@ public class UserMsg {
 
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "UserMsg")
-    private user user;
+    private user owner;
 
 
     //Insert Constructor
 
-    public UserMsg(long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt, user user) {
+    public UserMsg(long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt, user owner) {
         this.sourceId = sourceId;
         this.targetId = targetId;
         this.message = message;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        this.user = user;
+        this.owner = owner;
     }
 
 
     //Update Constructor
 
 
-    public UserMsg(long id, long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt, user user) {
+    public UserMsg(long id, long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt, user owner) {
         this.id = id;
         this.sourceId = sourceId;
         this.targetId = targetId;
         this.message = message;
         this.createdAt = createdAt;
         this.updatedAt = updatedAt;
-        user = user;
+        this.owner = owner;
     }
 
     public long getId() {
@@ -114,11 +114,11 @@ public class UserMsg {
         this.updatedAt = updatedAt;
     }
 
-    public user getUser() {
-        return user;
+    public user getOwner() {
+        return owner;
     }
 
-    public void setUser(com.fbclone.models.userTable.userMsg.UserMsg userMsg) {
-        user = user;
+    public void setOwner(user owner) {
+        this.owner = owner;
     }
 }

@@ -1,7 +1,7 @@
 package com.fbclone;
 
-import com.fbclone.Repos.UserProfileRepo;
-import com.fbclone.Repos.UserRepos;
+import com.fbclone.Repos.UserProfileRepository;
+import com.fbclone.Repos.UsersRepository;
 import com.fbclone.models.userTable.user;
 import com.fbclone.models.userTable.userProfile;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +20,10 @@ public class FbCloneApplication implements CommandLineRunner {
 
 
     @Autowired
-    private UserRepos userRepos;
+    private UsersRepository usersRepository;
 
     @Autowired
-    private UserProfileRepo userProfileRepo;
+    private UserProfileRepository userProfileRepository;
 
 
     @Override
@@ -44,9 +44,9 @@ public class FbCloneApplication implements CommandLineRunner {
 
         //adding the user
         user.setUserProfile(userProfile);
-        userProfile.setUser(user);
+        userProfile.setOwner(user);
 
-        userRepos.save(user);
+        usersRepository.save(user);
 
     }
 }

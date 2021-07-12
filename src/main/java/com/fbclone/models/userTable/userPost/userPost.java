@@ -19,14 +19,19 @@ public class userPost {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
-
+    //
+    //
+    //
+    // I'm making things nullable and realized id's, or dates should not be nullable
+    //
+    //
     @Column (nullable = false, length = 100)
     private long postId;
 
     @Column(nullable = false, length = 100)
     private long key;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String content;
 
 

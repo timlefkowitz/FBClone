@@ -1,8 +1,6 @@
 package com.fbclone.models.userTable.userFriends;
 
 
-import com.fbclone.models.userTable.user;
-
 import javax.persistence.*;
 import java.sql.Timestamp;
 
@@ -10,6 +8,8 @@ import java.sql.Timestamp;
 @Entity
 @Table(name="user_friend")
 public class user_friend {
+
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")

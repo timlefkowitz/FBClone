@@ -7,7 +7,9 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "userProfile")
-public class userProfile {
+public class userProfile extends user{
+
+
 
     public userProfile(){
 
@@ -21,45 +23,45 @@ public class userProfile {
 
 // trying to get work done on the via/bus haha
 
-    @Column(name = "userBio", length = 200)
+    @Column(name = "userBio", nullable = true ,  length = 200)
     private String userBio;
 
-    @Column(name = "userProfileContent")
+    @Column(name = "userProfileContent", nullable = true )
     private Timestamp userProfileContent;
 
     @Column(name = "lastLogin", length = 10)
     private Timestamp lastLogin;
 
-    @Column(name = "intro", length = 100)
+    @Column(name = "intro", length = 100 , nullable = true)
     private String intro;
 
 
     // Connecting relationships
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userProfile")
-    private user user;
+    private user owner;
 
 
     // Inseret Constructor
 
-    public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user user) {
+    public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user owner) {
         this.userBio = userBio;
         this.userProfileContent = userProfileContent;
         this.lastLogin = lastLogin;
         this.intro = intro;
-        this.user = user;
+        this.owner = owner;
     }
 
 
     // Update constructor
 
 
-    public userProfile(long id, String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user user) {
+    public userProfile(long id, String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user owner) {
         this.id = id;
         this.userBio = userBio;
         this.userProfileContent = userProfileContent;
         this.lastLogin = lastLogin;
         this.intro = intro;
-        this.user = user;
+        this.owner = owner;
     }
 
 
@@ -103,11 +105,11 @@ public class userProfile {
         this.intro = intro;
     }
 
-    public com.fbclone.models.userTable.user getUser() {
-        return user;
+    public com.fbclone.models.userTable.user getOwner() {
+        return owner;
     }
 
-    public void setUser(com.fbclone.models.userTable.user user) {
-        this.user = user;
+    public void setOwner(com.fbclone.models.userTable.user user) {
+        this.owner = user;
     }
 }

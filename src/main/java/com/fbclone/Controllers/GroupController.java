@@ -1,13 +1,10 @@
 package com.fbclone.Controllers;
 
 
-import com.fbclone.Repos.GroupRepo;
-import com.fbclone.Repos.UserRepos;
+import com.fbclone.Repos.GroupRepository;
 import com.fbclone.models.groupTable.groupTable;
-import com.fbclone.models.userTable.user;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -18,9 +15,9 @@ public class GroupController {
 
 
     @Autowired
-    private final GroupRepo groupDao;
+    private final GroupRepository groupDao;
 
-    public GroupController(GroupRepo groupDao) {
+    public GroupController(GroupRepository groupDao) {
         this.groupDao = groupDao;
     }
 
