@@ -174,10 +174,10 @@
 
         <th scope="col">Posts</th>
 
-        <div th:if="${'posts'}">
+        <div th:if="${'userPosts'}">
             <div th:text="${'postId'}">ID</div>
-            <div th:text="${'posts.title'}">Title</div>
-            <div th:text="${'posts.owner.username'}"></div>
+            <div th:text="${'userPosts.title'}">Title</div>
+            <div th:text="${'userPosts.owner.username'}"></div>
         </div>
 
 
