@@ -44,8 +44,8 @@ public class userPost {
 
 //    user Post images
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "userPost")
-    private List<userPostImgs> imgs;
+    @OneToOne(cascade = CascadeType.ALL, mappedBy = "userPost")
+    private List<userPost> userPost;
 
 
 
@@ -59,7 +59,7 @@ public class userPost {
         this.postId = postId;
         this.key = key;
         this.content = content;
-        this.imgs = imgs;
+//        this.imgs = imgs;
     }
 
     public userPost(){
@@ -75,7 +75,7 @@ public class userPost {
         this.postId = postId;
         this.key = key;
         this.content = content;
-        this.imgs = imgs;
+//        this.imgs = imgs;
     }
 
     public long getId() {

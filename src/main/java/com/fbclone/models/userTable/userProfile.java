@@ -40,29 +40,41 @@ public class userProfile extends user{
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userProfile")
     private user owner;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "up_ip")
+    private user ownerToProfile;
+
 
     // Inseret Constructor
 
-    public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user owner) {
+    public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user owner, user ownerToProfile) {
         this.userBio = userBio;
         this.userProfileContent = userProfileContent;
         this.lastLogin = lastLogin;
         this.intro = intro;
         this.owner = owner;
+        this.ownerToProfile = ownerToProfile;
     }
 
 
     // Update constructor
 
 
-    public userProfile(long id, String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user owner) {
+    public userProfile(long id, String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, com.fbclone.models.userTable.user owner, user ownerToProfile) {
         this.id = id;
         this.userBio = userBio;
         this.userProfileContent = userProfileContent;
         this.lastLogin = lastLogin;
         this.intro = intro;
         this.owner = owner;
+        this.ownerToProfile = ownerToProfile;
+
     }
+
+
+    // GETTERS AND SETTERS
+
+
 
 
     public long getId() {
@@ -111,5 +123,13 @@ public class userProfile extends user{
 
     public void setOwner(com.fbclone.models.userTable.user user) {
         this.owner = user;
+    }
+
+    public user getOwnerToProfile() {
+        return ownerToProfile;
+    }
+
+    public void setOwnerToProfile(user ownerToProfile) {
+        this.ownerToProfile = ownerToProfile;
     }
 }
