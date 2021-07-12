@@ -34,6 +34,9 @@ public class userPost {
     @Column(length = 100)
     private String content;
 
+    @OneToOne
+    private user owner;
+
 
 //    @ManyToOne(fetch = FetchType.LAZY, optional = false)
 //    @JoinColumn(name = "owner", nullable = false)

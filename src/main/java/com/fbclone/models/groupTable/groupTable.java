@@ -51,6 +51,9 @@ public class groupTable {
     @Column(nullable = false, name = "content")
     private String content;
 
+    @OneToOne
+    private user owner;
+
 //
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    @JoinColumn(name = "Group_Table")
