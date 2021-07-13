@@ -37,13 +37,13 @@ public class UserMessage {
     @Column(nullable = false, length = 100)
     private Timestamp updatedAt;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageSender")
-//    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
-    private user OwnerToMessageSender;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageReciver")
-//    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
-    private user OwnerToMessageReciver;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageSender")
+////    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
+//    private user OwnerToMessageSender;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageReciver")
+////    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
+//    private user OwnerToMessageReciver;
 
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "UserMsg")

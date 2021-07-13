@@ -36,14 +36,14 @@ public class post {
     @Column(nullable = false, length = 100)
     private String body;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usersPostOwner")
-    private user usersPost;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCommentsOwner")
-    private user ApostsCommentsOwnen;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCategory")
-    private user ApostsCategory;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usersPostOwner")
+//    private user usersPost;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCommentsOwner")
+//    private user ApostsCommentsOwnen;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCategory")
+//    private user ApostsCategory;
 
 
 

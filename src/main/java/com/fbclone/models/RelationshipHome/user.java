@@ -80,15 +80,15 @@ public class  user {
 
 //    Users Post
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usersPostOwner")
+    @OneToMany(mappedBy = "usersPostOwner")
     private user usersPostOwner;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCommentsOwner")
+    @OneToOne(mappedBy = "ApostsCommentsOwner")
     private user ApostsCommentsOwnen;
 
 //    Users Profile
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ownerToProfile")
+    @OneToOne( mappedBy = "ownerToProfile")
     private user ownerToProfile;
 
 //    Messages
@@ -101,7 +101,7 @@ public class  user {
 
 //    Friends
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "User_friend")
+    @OneToOne(mappedBy = "User_friend") // fetch not needed maybe for join columns
     private user User_friend;
 
 //            Groups

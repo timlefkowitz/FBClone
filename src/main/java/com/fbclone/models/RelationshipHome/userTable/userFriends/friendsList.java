@@ -14,15 +14,15 @@ public class friendsList {
     @Column(nullable = false)
     private long id;
 
-    @ManyToOne
-    @JoinColumn(name="added_user_id")
-    @JsonManagedReference
-    private user added_user_id;
+//    @ManyToOne
+//    @JoinColumn(name="added_user_id")
+//    @JsonManagedReference
+//    private user added_user_id;
 
-    @ManyToOne
-    @JoinColumn(name="friendListOwner_id")
-    @JsonManagedReference
-    private user userOwner;
+//    @ManyToOne
+//    @JoinColumn(name="friendListOwner_id")
+//    @JsonManagedReference
+//    private user userOwner;
 
 
 //    Getter and Setters
@@ -36,19 +36,19 @@ public class friendsList {
         this.id = id;
     }
 
-    public user getAdded_user_id() {
-        return added_user_id;
-    }
-
-    public void setAdded_user_id(user added_user_id) {
-        this.added_user_id = added_user_id;
-    }
-
-    public user getUserOwner() {
-        return userOwner;
-    }
-
-    public void setUserOwner(user userOwner) {
-        this.userOwner = userOwner;
-    }
+//    public user getAdded_user_id() {
+//        return added_user_id;
+//    }
+//
+//    public void setAdded_user_id(user added_user_id) {
+//        this.added_user_id = added_user_id;
+//    }
+//
+//    public user getUserOwner() {
+//        return userOwner;
+//    }
+//
+//    public void setUserOwner(user userOwner) {
+//        this.userOwner = userOwner;
+//    }
 }

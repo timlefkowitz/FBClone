@@ -32,8 +32,8 @@ public class user_friend {
     @Column(nullable = false, length = 100)
     private Timestamp updatedAt;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "User_friend")
-    private user User_friend;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "User_friend")
+//    private user User_friend;
 
 //
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userFriend")

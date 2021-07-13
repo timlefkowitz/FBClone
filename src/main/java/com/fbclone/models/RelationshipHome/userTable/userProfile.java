@@ -34,12 +34,12 @@ public class userProfile{
 
 
     // Connecting relationships
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userProfile")
-    private user owner;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userProfile")
+//    private user owner;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
-    private user ownerToProfile;
+//    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
+//    private user ownerToProfile;
 
 
     // Inseret Constructor
@@ -49,8 +49,8 @@ public class userProfile{
         this.userProfileContent = userProfileContent;
         this.lastLogin = lastLogin;
         this.intro = intro;
-        this.owner = owner;
-        this.ownerToProfile = ownerToProfile;
+//        this.owner = owner;
+//        this.ownerToProfile = ownerToProfile;
     }
 
     public userProfile() {
@@ -109,19 +109,19 @@ public class userProfile{
         this.intro = intro;
     }
 
-    public user getOwner() {
-        return owner;
-    }
-
-    public void setOwner(user user) {
-        this.owner = user;
-    }
-
-    public user getOwnerToProfile() {
-        return ownerToProfile;
-    }
-
-    public void setOwnerToProfile(user ownerToProfile) {
-        this.ownerToProfile = ownerToProfile;
-    }
+//    public user getOwner() {
+//        return owner;
+//    }
+//
+//    public void setOwner(user user) {
+//        this.owner = user;
+//    }
+//
+//    public user getOwnerToProfile() {
+//        return ownerToProfile;
+//    }
+//
+//    public void setOwnerToProfile(user ownerToProfile) {
+//        this.ownerToProfile = ownerToProfile;
+//    }
 }

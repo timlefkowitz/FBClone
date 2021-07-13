@@ -42,11 +42,11 @@ public class GroupMember {
     @Column(name = "notes")
     private String notes;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupOwner")
-    private user groupOwner;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupMembner")
-    private user GroupMembner;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupOwner")
+//    private user groupOwner;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupMembner")
+//    private user GroupMembner;
 
 
 
