@@ -36,8 +36,8 @@ public class groups {
     @Column(name = "status")   // new, approved active or blocked
     private String status;
 
-    @Column(name = "createdAt")
-    private Timestamp createdAt;
+//    @Column(name = "createdAt")
+//    private Timestamp createdAt;
 
     @Column(name = "updatedAt")
     private String updatedAt;
@@ -48,26 +48,26 @@ public class groups {
     @Column(nullable = false, name = "content")
     private String content;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groups")
-    private user groups;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupOwner")
-    private user groupOwner;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "Group_Membner")
-    private user Group_Membner;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPost")
-    private user GroupPost;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPostImgs")
-    private user GroupPostImgs;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPostComments")
-    private user GroupPostComments;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupsCatecory")
-    private user GroupsCatecory;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groups")
+//    private user groups;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupOwner")
+//    private user groupOwner;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "Group_Membner")
+//    private user Group_Membner;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPost")
+//    private user GroupPost;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPostImgs")
+//    private user GroupPostImgs;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPostComments")
+//    private user GroupPostComments;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupsCatecory")
+//    private user GroupsCatecory;
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupOwner")
 //    private user groupOwner;
@@ -91,7 +91,7 @@ public class groups {
         this.slug = slug;
         this.summary = summary;
         this.status = status;
-        this.createdAt = createdAt;
+//        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.profile = profile;
         this.content = content;
@@ -110,7 +110,7 @@ public class groups {
         this.slug = slug;
         this.summary = summary;
         this.status = status;
-        this.createdAt = createdAt;
+//        this.createdAt = createdAt;
         this.updatedAt = updatedAt;
         this.profile = profile;
         this.content = content;
@@ -185,13 +185,7 @@ public class groups {
         this.status = status;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
 
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
 
     public String getUpdatedAt() {
         return updatedAt;

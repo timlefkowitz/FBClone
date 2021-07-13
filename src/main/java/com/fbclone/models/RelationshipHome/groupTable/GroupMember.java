@@ -33,11 +33,11 @@ public class GroupMember {
     @Column(name = "status")
     private String status;
 
-    @Column(name = "createdAt")
-    private Timestamp createdAt;
-
-    @Column(name = "updatedAt")
-    private Timestamp updatedAt;
+//    @Column(name = "createdAt")
+//    private Timestamp createdAt;
+//
+//    @Column(name = "updatedAt")
+//    private Timestamp updatedAt;
 
     @Column(name = "notes")
     private String notes;
@@ -60,8 +60,6 @@ public class GroupMember {
         this.userId = userId;
         this.roleId = roleId;
         this.status = status;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
         this.notes = notes;
 //        this.groupMember = groupMember;
     }
@@ -74,10 +72,7 @@ public class GroupMember {
         this.userId = userId;
         this.roleId = roleId;
         this.status = status;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
         this.notes = notes;
-//        this.groupMember = groupMember;
     }
 
     public long getId() {
@@ -120,22 +115,6 @@ public class GroupMember {
         this.status = status;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
-
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Timestamp getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
     public String getNotes() {
         return notes;
     }
@@ -144,11 +123,5 @@ public class GroupMember {
         this.notes = notes;
     }
 
-//    public groupMember getgroupMember() {
-//        return groupMember;
-//    }
-//
-//    public void setgroupMember(groupMember groupMember) {
-//        this.groupMember = groupMember;
-//    }
+
 }

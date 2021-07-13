@@ -46,7 +46,7 @@ public class FbCloneApplication implements CommandLineRunner {
 
         //adding the user
         user.setUserProfile(userProfile);
-        userProfile.setOwner(user);
+//        userProfile.setOwner(user);
 
         usersRepository.save(user);
 

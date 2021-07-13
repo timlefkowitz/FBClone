@@ -23,11 +23,11 @@ public class userProfile{
     @Column(name = "userBio", nullable = true ,  length = 200)
     private String userBio;
 
-    @Column(name = "userProfileContent", nullable = true )
-    private Timestamp userProfileContent;
-
-    @Column(name = "lastLogin", length = 10)
-    private Timestamp lastLogin;
+//    @Column(name = "userProfileContent", nullable = true )
+//    private Timestamp userProfileContent;
+//
+//    @Column(name = "lastLogin", length = 10)
+//    private Timestamp lastLogin;
 
     @Column(name = "intro", length = 100 , nullable = true)
     private String intro;
@@ -46,8 +46,8 @@ public class userProfile{
 
     public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, user owner, user ownerToProfile) {
         this.userBio = userBio;
-        this.userProfileContent = userProfileContent;
-        this.lastLogin = lastLogin;
+//        this.userProfileContent = userProfileContent;
+//        this.lastLogin = lastLogin;
         this.intro = intro;
 //        this.owner = owner;
 //        this.ownerToProfile = ownerToProfile;
@@ -85,22 +85,6 @@ public class userProfile{
         this.userBio = userBio;
     }
 
-    public Timestamp getUserProfileContent() {
-        return userProfileContent;
-    }
-
-    public void setUserProfileContent(Timestamp userProfileContent) {
-        this.userProfileContent = userProfileContent;
-    }
-
-//    public Timestamp getLastLogin() {
-//        return lastLogin;
-//    }
-
-    public void setLastLogin(Timestamp lastLogin) {
-        this.lastLogin = lastLogin;
-    }
-
     public String getIntro() {
         return intro;
     }
@@ -109,19 +93,4 @@ public class userProfile{
         this.intro = intro;
     }
 
-//    public user getOwner() {
-//        return owner;
-//    }
-//
-//    public void setOwner(user user) {
-//        this.owner = user;
-//    }
-//
-//    public user getOwnerToProfile() {
-//        return ownerToProfile;
-//    }
-//
-//    public void setOwnerToProfile(user ownerToProfile) {
-//        this.ownerToProfile = ownerToProfile;
-//    }
 }

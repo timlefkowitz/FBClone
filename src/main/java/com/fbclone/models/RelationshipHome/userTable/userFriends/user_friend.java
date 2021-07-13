@@ -26,11 +26,11 @@ public class user_friend {
     @Column(nullable = false, length = 100)
     private String type;
 
-    @Column(nullable = false, length = 100)
-    private Timestamp createdAt;
-
-    @Column(nullable = false, length = 100)
-    private Timestamp updatedAt;
+//    @Column(nullable = false, length = 100)
+//    private Timestamp createdAt;
+//
+//    @Column(nullable = false, length = 100)
+//    private Timestamp updatedAt;
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "User_friend")
 //    private user User_friend;
@@ -46,8 +46,7 @@ public class user_friend {
         this.sourceId = sourceId;
         this.targetId = targetId;
         this.type = type;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+
 //        this.user_Friend = user_Friend;
     }
 
@@ -60,8 +59,7 @@ public class user_friend {
         this.sourceId = sourceId;
         this.targetId = targetId;
         this.type = type;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
+
 //        this.user = user;
     }
 
@@ -97,21 +95,7 @@ public class user_friend {
         this.type = type;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
 
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Timestamp getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
-    }
 
 //    public com.fbclone.models.RelationshipHome.userTable.main.user getUser() {
 //        return user;

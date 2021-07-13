@@ -25,17 +25,17 @@ public class userPostImgs {
 //    @JoinColumn (name = "userPost_id")
 //    private post img;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usersPostOwner")
-    private user usersPost;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCommentsOwner")
-    private user ApostsCommentsOwnen;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCategory")
-    private user ApostsCategory;
-
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostingsImages")
-    private userPostImgs img;
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usersPostOwner")
+//    private user usersPost;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCommentsOwner")
+//    private user ApostsCommentsOwnen;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCategory")
+//    private user ApostsCategory;
+//
+//    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostingsImages")
+//    private userPostImgs img;
 
 
     //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -48,7 +48,7 @@ public class userPostImgs {
     public userPostImgs(String title, String path, userPostImgs img) {
         this.title = title;
         this.path = path;
-        this.img = img;
+//        this.img = img;
     }
 
     //update constructor
@@ -58,7 +58,7 @@ public class userPostImgs {
         this.id = id;
         this.title = title;
         this.path = path;
-        this.img = img;
+//        this.img = img;
     }
 
     //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
@@ -88,37 +88,5 @@ public class userPostImgs {
 
     public void setPath(String path) {
         this.path = path;
-    }
-
-    public user getUsersPost() {
-        return usersPost;
-    }
-
-    public void setUsersPost(user usersPost) {
-        this.usersPost = usersPost;
-    }
-
-    public user getApostsCommentsOwnen() {
-        return ApostsCommentsOwnen;
-    }
-
-    public void setApostsCommentsOwnen(user apostsCommentsOwnen) {
-        ApostsCommentsOwnen = apostsCommentsOwnen;
-    }
-
-    public user getApostsCategory() {
-        return ApostsCategory;
-    }
-
-    public void setApostsCategory(user apostsCategory) {
-        ApostsCategory = apostsCategory;
-    }
-
-    public userPostImgs getImg() {
-        return img;
-    }
-
-    public void setImg(userPostImgs img) {
-        this.img = img;
     }
 }

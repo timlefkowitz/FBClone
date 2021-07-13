@@ -43,14 +43,14 @@ public class postTable {
     @Column(length = 100)
     private String published;
 
-    @Column(length = 100)
-    private Timestamp createdAt;
-
-    @Column(length = 100)
-    private Timestamp updatedAt ;
-
-    @Column(length = 100)
-    private Timestamp publishedAt;
+//    @Column(length = 100)
+//    private Timestamp createdAt;
+//
+//    @Column(length = 100)
+//    private Timestamp updatedAt ;
+//
+//    @Column(length = 100)
+//    private Timestamp publishedAt;
 
     @Column(nullable = false, length = 100)
     private String content;
@@ -69,9 +69,7 @@ public class postTable {
         this.slug = slug;
         this.summary = summary;
         this.published = published;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.publishedAt = publishedAt;
+
         this.content = content;
 //        this.owner = owner;
     }
@@ -88,9 +86,7 @@ public class postTable {
         this.slug = slug;
         this.summary = summary;
         this.published = published;
-        this.createdAt = createdAt;
-        this.updatedAt = updatedAt;
-        this.publishedAt = publishedAt;
+
         this.content = content;
 //        this.owner = owner;
     }
@@ -195,29 +191,7 @@ public class postTable {
         this.published = published;
     }
 
-    public Timestamp getCreatedAt() {
-        return createdAt;
-    }
 
-    public void setCreatedAt(Timestamp createdAt) {
-        this.createdAt = createdAt;
-    }
-
-    public Timestamp getUpdatedAt() {
-        return updatedAt;
-    }
-
-    public void setUpdatedAt(Timestamp updatedAt) {
-        this.updatedAt = updatedAt;
-    }
-
-    public Timestamp getPublishedAt() {
-        return publishedAt;
-    }
-
-    public void setPublishedAt(Timestamp publishedAt) {
-        this.publishedAt = publishedAt;
-    }
 
     public String getContent() {
         return content;
