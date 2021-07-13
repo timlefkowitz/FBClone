@@ -9,13 +9,8 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name = "userProfile")
-public class userProfile extends user{
+public class userProfile{
 
-
-
-    public userProfile(){
-
-    }
 
 
     @Id
@@ -42,8 +37,8 @@ public class userProfile extends user{
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "userProfile")
     private user owner;
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "up_ip")
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
     private user ownerToProfile;
 
 
@@ -58,20 +53,15 @@ public class userProfile extends user{
         this.ownerToProfile = ownerToProfile;
     }
 
+    public userProfile() {
+
+    }
+
 
     // Update constructor
 
 
-    public userProfile(long id, String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, user owner, user ownerToProfile) {
-        this.id = id;
-        this.userBio = userBio;
-        this.userProfileContent = userProfileContent;
-        this.lastLogin = lastLogin;
-        this.intro = intro;
-        this.owner = owner;
-        this.ownerToProfile = ownerToProfile;
 
-    }
 
 
     // GETTERS AND SETTERS
@@ -103,9 +93,9 @@ public class userProfile extends user{
         this.userProfileContent = userProfileContent;
     }
 
-    public Timestamp getLastLogin() {
-        return lastLogin;
-    }
+//    public Timestamp getLastLogin() {
+//        return lastLogin;
+//    }
 
     public void setLastLogin(Timestamp lastLogin) {
         this.lastLogin = lastLogin;

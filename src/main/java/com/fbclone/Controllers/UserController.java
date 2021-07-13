@@ -11,7 +11,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
-import java.sql.Timestamp;
+
+import javax.persistence.*;
+import java.security.Timestamp;
+import java.time.LocalDate;
+import java.util.List;
 
 
 //{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}{}
@@ -46,6 +50,9 @@ public class UserController {
     private final UsersRepository userDao;
 
 
+    @Autowired
+    private Timestamp Timestamp;
+
 
     public UserController(GroupRepository groupRepositoryDao, UserProfileRepository usersProfileDao, UsersPostsRepository usersPostsDao, UsersRepository userDao) {
 
@@ -53,6 +60,7 @@ public class UserController {
         this.usersProfileDao = usersProfileDao;
         this.usersPostsDao = usersPostsDao;
         this.userDao = userDao;
+
     }
 
 
@@ -123,7 +131,7 @@ public class UserController {
     @PostMapping("/create")
     public String addNewOrder(@RequestParam(name="email") String email, @RequestParam(name="totalPrice") Double totalPrice){
 
-        user user = new user();
+        user user = new user(userDao);
         user.setStatus("  The basic's edit modify delete and create are a blessing! ");
         user.setEmail(email);
         userDao.save(user);
@@ -145,8 +153,6 @@ public class UserController {
                          @RequestParam(name = "intro") String intro,
                          @RequestParam(name = "profile") String profile,
                          @RequestParam(name = "mobile") long mobile,
-
-
                          @RequestParam(name = "owner") String owner,
 //
 //                         << I'm trying to problem solve here. Owner is not representing
@@ -194,7 +200,7 @@ public class UserController {
 
 
 //        user user = userDao.getById(1l);
-        user newUser = new user(userName, firstName, middleName, lastName, email, passwordHash, registeredAt, lastLogin, intro, profile, mobile, status, null);
+        user newUser = new user(firstName,middleName,lastName, userName,email,passwordHash,registeredAt,lastLogin,intro,profile,mobile, owner);
 
         // We need to do our sets
         newUser.setFirstName(firstName);

@@ -2,24 +2,24 @@ package com.fbclone.models.RelationshipHome;
 
 
 
+import com.fbclone.Repos.UsersRepository;
 import com.fbclone.models.RelationshipHome.userTable.userPost.userPost;
+import com.fbclone.models.RelationshipHome.userTable.userProfile;
+
 
 import javax.persistence.*;
-import java.sql.Timestamp;
+import java.security.Timestamp;
 import java.time.LocalDate;
 import java.util.List;
 
 @Entity // << this is how hibernate knows to make tables out of the class
 @Table(name="user")
-public class user {
+public class  user {
+
 
     // [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
     //[][][][][][][][][][][][][] the Blank function              [][][][][][][][][][][][][][][][][][][]
     //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
-
-    public user() {
-
-    }
 
     // [][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
     //[][][][][][][][][][][][][] Calling instances               [][][][][][][][][][][][][][][][][][][]
@@ -81,8 +81,8 @@ public class user {
     //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 
     @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "up_ip")
-    private com.fbclone.models.RelationshipHome.userTable.userProfile userProfile;
+    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
+    private user ownerToProfile;
 
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
     private List<userPost> userPosts;
@@ -122,6 +122,7 @@ public class user {
     // Insert Constructor
 
     public user(String firstName, String middleName, String lastName, String userName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status) {
+
         this.firstName = firstName;
         this.middleName = middleName;
         this.lastName = lastName;
@@ -140,6 +141,7 @@ public class user {
     // update Constructor
 
     public user(long id, String firstName, String middleName, String lastName, String userName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status) {
+
         this.id = id;
         this.firstName = firstName;
         this.middleName = middleName;
@@ -155,13 +157,11 @@ public class user {
         this.status = status;
     }
 
-
-    // Create a group constructor
-    public user(long createdBy, long updatedBy, String title, String metaTitle, String slug, String summary, String status, Timestamp createdAt, Timestamp updatedAt, String profile, String content) {
+    public user(UsersRepository usersRepository) {
     }
 
-    public user(String userName, String firstName, String middleName, String lastName, String email, String passwordHash, Timestamp registeredAt, Timestamp lastLogin, String intro, String profile, long mobile, String status, Object status1) {
-    }
+
+// GETTERS AND SETTERS
 
 
     public long getId() {
@@ -284,11 +284,24 @@ public class user {
         this.dateOfBirth = dateOfBirth;
     }
 
-    public com.fbclone.models.RelationshipHome.userTable.userProfile getUserProfile() {
-        return userProfile;
+
+    public user getOwnerToProfile() {
+        return ownerToProfile;
     }
 
-    public void setUserProfile(com.fbclone.models.RelationshipHome.userTable.userProfile userProfile) {
-        this.userProfile = userProfile;
+    public void setOwnerToProfile(user ownerToProfile) {
+        this.ownerToProfile = ownerToProfile;
+    }
+
+    public List<userPost> getUserPosts() {
+        return userPosts;
+    }
+
+    public void setUserPosts(List<userPost> userPosts) {
+        this.userPosts = userPosts;
+    }
+
+
+    public void setUserProfile(userProfile userProfile) {
     }
 }

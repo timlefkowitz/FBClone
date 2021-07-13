@@ -19,6 +19,8 @@ public class FbCloneApplication implements CommandLineRunner {
     }
 
 
+
+
     @Autowired
     private UsersRepository usersRepository;
 
@@ -30,7 +32,7 @@ public class FbCloneApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
             // user Object
-        user user = new user();
+        user user = new user(usersRepository);
         user.setFirstName("Tim");
         user.setEmail("timothy.lefkowitz@gmail.com");
         user.setStatus("NTFS is just a copied unix with a bunch of added hashmaps :D LMAO");
