@@ -1,8 +1,7 @@
-package com.fbclone.models.RelationshipHome.userTable.userPost;
+package com.fbclone.models.RelationshipHome;
 
 
 import com.fbclone.Repos.UsersPostsRepository;
-import com.fbclone.models.RelationshipHome.user;
 
 import javax.persistence.*;
 import java.util.List;
@@ -10,7 +9,7 @@ import java.util.List;
 
 @Entity
 @Table(name="userPost")
-public class userPost {
+public class post {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -37,14 +36,25 @@ public class userPost {
     @Column(nullable = false, length = 100)
     private String body;
 
-    @ManyToOne
-    @JoinColumn (name = "owner_id")
-    private user owner;
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usersPostOwner")
+    private user usersPost;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCommentsOwner")
+    private user ApostsCommentsOwnen;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCategory")
+    private user ApostsCategory;
+
+
+
+//    @ManyToOne
+//    @JoinColumn (name = "owner_id")
+//    private user owner;
 
 //    user Post images
 
-    @OneToOne(cascade = CascadeType.ALL, mappedBy = "userPost")
-    private List<UsersPostsRepository> userPost;
+//    @OneToOne(cascade = CascadeType.ALL, mappedBy = "userPost")
+//    private List<UsersPostsRepository> userPost;
 
 
 
@@ -54,14 +64,14 @@ public class userPost {
 
     //Insert Constructor
 
-    public userPost( long postId, long key, String content, List<userPost> img) {
+    public post(long postId, long key, String content, List<post> img) {
         this.postId = postId;
         this.key = key;
         this.content = content;
 //        this.imgs = imgs;
     }
 
-    public userPost(){
+    public post(){
 
     }
 
@@ -69,7 +79,7 @@ public class userPost {
     //Update Constructor
 
 
-    public userPost(long id, long postId, long key, String content, List<userPost> img) {
+    public post(long id, long postId, long key, String content, List<post> img) {
         this.id = id;
         this.postId = postId;
         this.key = key;

@@ -3,14 +3,12 @@ package com.fbclone.models.RelationshipHome;
 
 
 import com.fbclone.Repos.UsersRepository;
-import com.fbclone.models.RelationshipHome.userTable.userPost.userPost;
 import com.fbclone.models.RelationshipHome.userTable.userProfile;
 
 
 import javax.persistence.*;
 import java.security.Timestamp;
 import java.time.LocalDate;
-import java.util.List;
 
 @Entity // << this is how hibernate knows to make tables out of the class
 @Table(name="user")
@@ -80,12 +78,60 @@ public class  user {
     //[][][][][][][][][][][][][] mySQL Relationships[][][][][][][][][][][][][][][][][]
     //[][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][][]
 
-    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
+//    Users Post
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usersPostOwner")
+    private user usersPostOwner;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ApostsCommentsOwner")
+    private user ApostsCommentsOwnen;
+
+//    Users Profile
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "ownerToProfile")
     private user ownerToProfile;
 
-    @OneToMany(cascade = CascadeType.ALL, mappedBy = "owner")
-    private List<userPost> userPosts;
+//    Messages
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageSender")
+    private user OwnerToMessageSender;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageReciver")
+    private user OwnerToMessageReciver;
+
+//    Friends
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "User_friend")
+    private user User_friend;
+
+//            Groups
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groups")
+    private user groups;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupOwner")
+    private user groupOwner;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupMembner")
+    private user GroupMembner;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPost")
+    private user GroupPost;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPostImgs")
+    private user GroupPostImgs;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupPostComments")
+    private user GroupPostComments;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupsCatecory")
+    private user GroupsCatecory;
+
+
+
+
+
+
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    @JoinColumn(name = "user_message_id")
@@ -284,6 +330,21 @@ public class  user {
         this.dateOfBirth = dateOfBirth;
     }
 
+    public user getUsersPostOwner() {
+        return usersPostOwner;
+    }
+
+    public void setUsersPostOwner(user usersPostOwner) {
+        this.usersPostOwner = usersPostOwner;
+    }
+
+    public user getApostsCommentsOwnen() {
+        return ApostsCommentsOwnen;
+    }
+
+    public void setApostsCommentsOwnen(user apostsCommentsOwnen) {
+        ApostsCommentsOwnen = apostsCommentsOwnen;
+    }
 
     public user getOwnerToProfile() {
         return ownerToProfile;
@@ -293,14 +354,85 @@ public class  user {
         this.ownerToProfile = ownerToProfile;
     }
 
-    public List<userPost> getUserPosts() {
-        return userPosts;
+    public user getOwnerToMessageSender() {
+        return OwnerToMessageSender;
     }
 
-    public void setUserPosts(List<userPost> userPosts) {
-        this.userPosts = userPosts;
+    public void setOwnerToMessageSender(user ownerToMessageSender) {
+        OwnerToMessageSender = ownerToMessageSender;
     }
 
+    public user getOwnerToMessageReciver() {
+        return OwnerToMessageReciver;
+    }
+
+    public void setOwnerToMessageReciver(user ownerToMessageReciver) {
+        OwnerToMessageReciver = ownerToMessageReciver;
+    }
+
+    public user getUser_friend() {
+        return User_friend;
+    }
+
+    public void setUser_friend(user user_friend) {
+        User_friend = user_friend;
+    }
+
+    public user getGroups() {
+        return groups;
+    }
+
+    public void setGroups(user groups) {
+        this.groups = groups;
+    }
+
+    public user getGroupOwner() {
+        return groupOwner;
+    }
+
+    public void setGroupOwner(user groupOwner) {
+        this.groupOwner = groupOwner;
+    }
+
+    public user getGroupMembner() {
+        return GroupMembner;
+    }
+
+    public void setGroupMembner(user groupMembner) {
+        GroupMembner = groupMembner;
+    }
+
+    public user getGroupPost() {
+        return GroupPost;
+    }
+
+    public void setGroupPost(user groupPost) {
+        GroupPost = groupPost;
+    }
+
+    public user getGroupPostImgs() {
+        return GroupPostImgs;
+    }
+
+    public void setGroupPostImgs(user groupPostImgs) {
+        GroupPostImgs = groupPostImgs;
+    }
+
+    public user getGroupPostComments() {
+        return GroupPostComments;
+    }
+
+    public void setGroupPostComments(user groupPostComments) {
+        GroupPostComments = groupPostComments;
+    }
+
+    public user getGroupsCatecory() {
+        return GroupsCatecory;
+    }
+
+    public void setGroupsCatecory(user groupsCatecory) {
+        GroupsCatecory = groupsCatecory;
+    }
 
     public void setUserProfile(userProfile userProfile) {
     }

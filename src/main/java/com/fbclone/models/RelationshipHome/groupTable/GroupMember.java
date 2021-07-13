@@ -10,9 +10,9 @@ import java.sql.Timestamp;
 @Entity
 
 @Table(name="groupMember")
-public class groupMember {
+public class GroupMember {
 
-    public groupMember(){
+    public GroupMember(){
 
     }
 
@@ -42,13 +42,20 @@ public class groupMember {
     @Column(name = "notes")
     private String notes;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groupOwner")
+    private user groupOwner;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupMembner")
+    private user GroupMembner;
+
+
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "GroupMember")
 //    private groupMember groupMember;
 
     //Insert Constructor
 
-    public groupMember(long groupId, long userId, String roleId, String status, Timestamp createdAt, Timestamp updatedAt, String notes, user user) {
+    public GroupMember(long groupId, long userId, String roleId, String status, Timestamp createdAt, Timestamp updatedAt, String notes, user user) {
         this.groupId = groupId;
         this.userId = userId;
         this.roleId = roleId;
@@ -61,7 +68,7 @@ public class groupMember {
 
     //Update Constructor
 
-    public groupMember(long id, long groupId, long userId, String roleId, String status, Timestamp createdAt, Timestamp updatedAt, String notes, user user) {
+    public GroupMember(long id, long groupId, long userId, String roleId, String status, Timestamp createdAt, Timestamp updatedAt, String notes, user user) {
         this.id = id;
         this.groupId = groupId;
         this.userId = userId;

@@ -1,6 +1,9 @@
-package com.fbclone.models.RelationshipHome.userTable.userMsg;
+package com.fbclone.models.RelationshipHome.userTable.userMessage;
 
 
+
+import com.fbclone.Repos.UserMessageRepository;
+import com.fbclone.models.RelationshipHome.user;
 
 import javax.persistence.*;
 import java.sql.Timestamp;
@@ -8,9 +11,9 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name="userMsg")
-public class UserMsg {
+public class UserMessage {
 
-    public UserMsg(){
+    public UserMessage(){
 
     }
 
@@ -34,6 +37,14 @@ public class UserMsg {
     @Column(nullable = false, length = 100)
     private Timestamp updatedAt;
 
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageSender")
+//    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
+    private user OwnerToMessageSender;
+
+    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageReciver")
+//    @JoinColumn(name = "userProfile") // was this known as up_ip???? if so I'm wondering why.
+    private user OwnerToMessageReciver;
+
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "UserMsg")
 //    private user owner;
@@ -41,7 +52,7 @@ public class UserMsg {
 
     //Insert Constructor
 
-    public UserMsg(long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt) {
+    public UserMessage(long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt) {
         this.sourceId = sourceId;
         this.targetId = targetId;
         this.message = message;
@@ -54,7 +65,7 @@ public class UserMsg {
     //Update Constructor
 
 
-    public UserMsg(long id, long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt) {
+    public UserMessage(long id, long sourceId, long targetId, String message, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.sourceId = sourceId;
         this.targetId = targetId;

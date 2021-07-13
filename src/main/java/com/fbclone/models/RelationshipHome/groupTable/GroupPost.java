@@ -8,9 +8,9 @@ import java.sql.Timestamp;
 
 @Entity
 @Table(name="groupPost")
-public class groupPost {
+public class GroupPost {
 
-    public groupPost(){
+    public GroupPost(){
 
     }
 
@@ -50,7 +50,7 @@ public class groupPost {
 
     //Insert Constructor
 
-    public groupPost(long groupId, long userId, String message, Timestamp createdAt, Timestamp updatedAt) {
+    public GroupPost(long groupId, long userId, String message, Timestamp createdAt, Timestamp updatedAt) {
         this.groupId = groupId;
         this.userId = userId;
         this.message = message;
@@ -62,7 +62,7 @@ public class groupPost {
     //Update Constructor
 
 
-    public groupPost(long id, long groupId, long userId, String message, Timestamp createdAt, Timestamp updatedAt) {
+    public GroupPost(long id, long groupId, long userId, String message, Timestamp createdAt, Timestamp updatedAt) {
         this.id = id;
         this.groupId = groupId;
         this.userId = userId;
