@@ -20,7 +20,7 @@ public class userProfile{
 
 // trying to get work done on the via/bus haha
 
-    @Column(name = "userBio", nullable = true ,  length = 200)
+    @Column(name = "userBio",  length = 200)
     private String userBio;
 
 //    @Column(name = "userProfileContent", nullable = true )
@@ -29,7 +29,7 @@ public class userProfile{
 //    @Column(name = "lastLogin", length = 10)
 //    private Timestamp lastLogin;
 
-    @Column(name = "intro", length = 100 , nullable = true)
+    @Column(name = "intro", length = 100 )
     private String intro;
 
 
@@ -44,7 +44,7 @@ public class userProfile{
 
     // Inseret Constructor
 
-    public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro, user owner, user ownerToProfile) {
+    public userProfile(String userBio, Timestamp userProfileContent, Timestamp lastLogin, String intro) {
         this.userBio = userBio;
 //        this.userProfileContent = userProfileContent;
 //        this.lastLogin = lastLogin;

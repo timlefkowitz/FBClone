@@ -15,10 +15,10 @@ public class userPostImgs {
     @Column(name = "id")
     private long id;
 
-    @Column(nullable = false)
+    @Column()
     private String title;
 
-    @Column(nullable = false)
+    @Column()
     private String path;
 
 //    @ManyToOne

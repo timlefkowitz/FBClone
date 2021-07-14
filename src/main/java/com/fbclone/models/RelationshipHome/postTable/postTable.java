@@ -15,20 +15,18 @@ public class postTable {
 
     }
 
-
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
     private long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private long authorId ;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private long parentId ;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String title ;
 
     @Column(length = 100)
@@ -37,7 +35,7 @@ public class postTable {
     @Column(length = 100)
     private String slug ;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String summary ;
 
     @Column(length = 100)

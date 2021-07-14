@@ -17,13 +17,13 @@ public class user_friend {
     @Column(name = "id")
     private long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private long sourceId;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private long targetId;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String type;
 
 //    @Column(nullable = false, length = 100)

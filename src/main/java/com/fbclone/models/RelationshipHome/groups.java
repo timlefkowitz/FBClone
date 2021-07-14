@@ -21,7 +21,7 @@ public class groups {
     @Column(name = "UpdatedBy")
     private String updatedBy;
 
-    @Column(nullable = false, name = "title")
+    @Column(name = "title")
     private String title;
 
     @Column(name = "metaTitle")
@@ -30,7 +30,7 @@ public class groups {
     @Column(name = "slug")
     private String slug;
 
-    @Column(nullable = false, name = "summary")
+    @Column(name = "summary")
     private String summary;
 
     @Column(name = "status")   // new, approved active or blocked
@@ -42,10 +42,10 @@ public class groups {
     @Column(name = "updatedAt")
     private String updatedAt;
 
-    @Column(nullable = false, name = "profile")
+    @Column(name = "profile")
     private String profile;
 
-    @Column(nullable = false, name = "content")
+    @Column( name = "content")
     private String content;
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "groups")

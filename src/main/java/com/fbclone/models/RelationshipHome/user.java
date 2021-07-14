@@ -30,22 +30,22 @@ public class  user {
 
 // trying to get work done on the via/bus haha
 
-    @Column(name = "firstName", nullable = false, length = 100)
+    @Column(name = "firstName", length = 100)
     private String firstName;
 
-    @Column(name = "middleName", nullable = true, length = 20)
+    @Column(name = "middleName",  length = 20)
     private String middleName;
 
-    @Column(name = "lastName", nullable = false, length = 20)
+    @Column(name = "lastName",  length = 20)
     private String lastName;
 
-    @Column(name = "userName", nullable = false, length = 100)
+    @Column(name = "userName",  length = 100)
     private String userName;
 
-    @Column(name = "email", nullable = false, length = 20)
+    @Column(name = "email",  length = 20)
     private String email;
 
-    @Column(name = "passwordHash", nullable = false,  length = 100)
+    @Column(name = "passwordHash",   length = 100)
     private String passwordHash;
 
 //    @Column(name = "registeredAt", nullable = false, length = 10)
@@ -266,8 +266,6 @@ public class  user {
         this.passwordHash = passwordHash;
     }
 
-
-
     public String getIntro() {
         return intro;
     }
@@ -299,8 +297,6 @@ public class  user {
     public void setStatus(String status) {
         this.status = status;
     }
-
-
 
     public void setUserProfile(userProfile userProfile) {
     }

@@ -21,19 +21,19 @@ public class post {
     // I'm making things nullable and realized id's, or dates should not be nullable
     //
     //
-    @Column (nullable = false, length = 100)
+    @Column (length = 100)
     private long postId;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private long key;
 
     @Column(length = 100)
     private String content;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String title;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private String body;
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "usersPostOwner")

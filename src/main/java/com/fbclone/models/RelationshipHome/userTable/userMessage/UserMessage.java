@@ -22,19 +22,19 @@ public class UserMessage {
     @Column(name = "id")
     private long id;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private long sourceId;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private long targetId;
 
-    @Column(nullable = false, length = 250)
+    @Column(length = 250)
     private String message;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private Timestamp createdAt;
 
-    @Column(nullable = false, length = 100)
+    @Column(length = 100)
     private Timestamp updatedAt;
 
 //    @OneToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL, mappedBy = "OwnerToMessageSender")

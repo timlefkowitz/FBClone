@@ -10,10 +10,10 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
-    @GetMapping("/LandingPage")
+    @GetMapping("/")
     public String landingpage()
     {
-        return "LandingPage";
+        return "index";
     }
 
     @GetMapping("/home")

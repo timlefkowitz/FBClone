@@ -150,6 +150,17 @@
                 <thead class="thead-dark">
                 <tr>
                     <th scope="col">ALL Groups</th>
+
+                    <div th:if="${''}">
+                        <div th:text="${''}">ID</div>
+                        <div th:text="${''}">Username</div>
+                    </div>
+
+                    <div th:each="imgs: ${'userPost.imgs'}">
+                        <img th:src="${imgs.path}" th:alt="${imgs.description}">
+                    </div>
+
+
                 </tr>
                 </thead>
                 <tbody>

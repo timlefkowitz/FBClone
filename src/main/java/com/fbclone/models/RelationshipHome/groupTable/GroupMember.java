@@ -8,7 +8,6 @@ import javax.persistence.*;
 import java.sql.Timestamp;
 
 @Entity
-
 @Table(name="groupMember")
 public class GroupMember {
 
