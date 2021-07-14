@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
-    public String landingpage(Model view)
+    @GetMapping("/LandingPage")
+    public String landingpage()
     {
         return "LandingPage";
     }

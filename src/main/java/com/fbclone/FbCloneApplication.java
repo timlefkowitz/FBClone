@@ -36,7 +36,7 @@ public class FbCloneApplication implements CommandLineRunner {
         user.setFirstName("Tim");
         user.setEmail("timothy.lefkowitz@gmail.com");
         user.setStatus("NTFS is just a copied unix with a bunch of added hashmaps :D LMAO");
-        user.setDateOfBirth(LocalDate.of(1988, 10, 16));
+//        user.setDateOfBirth(LocalDate.of(1988, 10, 16));
 //        user.setGender(Gender.MALE);
 
         // Adding User Profile Examples

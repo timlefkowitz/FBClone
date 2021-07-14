@@ -68,8 +68,7 @@ public class  user {
 
     // Adding some columns i missed \
 
-    @Column(name = "gender", length = 30, nullable = true)
-    private String gender;
+
 
 //    @Column(name = "dateOfBirth", nullable = false)
 //    private LocalDate dateOfBirth;
@@ -204,6 +203,9 @@ public class  user {
     public user(UsersRepository usersRepository) {
     }
 
+    public user(String firstName, String middleName, String lastName, String userName, String email, String passwordHash, String intro, String profile, long mobile, String owner) {
+    }
+
 
 // GETTERS AND SETTERS
 
@@ -296,14 +298,6 @@ public class  user {
 
     public void setStatus(String status) {
         this.status = status;
-    }
-
-    public String getGender() {
-        return gender;
-    }
-
-    public void setGender(String gender) {
-        this.gender = gender;
     }
 
 

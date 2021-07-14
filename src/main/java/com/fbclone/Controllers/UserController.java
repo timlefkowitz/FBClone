@@ -50,8 +50,8 @@ public class UserController {
     private final UsersRepository userDao;
 
 
-    @Autowired
-    private Timestamp Timestamp;
+//    @Autowired
+//    private Timestamp Timestamp;
 
 
     public UserController(GroupRepository groupRepositoryDao, UserProfileRepository usersProfileDao, UsersPostsRepository usersPostsDao, UsersRepository userDao) {
@@ -66,27 +66,27 @@ public class UserController {
 
     // Show Constructors
 
-    @GetMapping("/show")
-    public String show(Model view){
-        view.addAttribute("ads", userDao.findAll());
-        return"orders/show";
-    }
-
-    @GetMapping("/show/{id}")
-    public String showById(@PathVariable Long id, Model view){
-        view.addAttribute("ads", userDao.getById(id));
-        return "orders/show";
-    }
+//    @GetMapping("/show")
+//    public String show(Model view){
+//        view.addAttribute("ads", userDao.findAll());
+//        return"orders/show";
+//    }
+//
+//    @GetMapping("/show/{id}")
+//    public String showById(@PathVariable Long id, Model view){
+//        view.addAttribute("ads", userDao.getById(id));
+//        return "orders/show";
+//    }
 
 
     // Edit Constructors
-
-    @GetMapping("/show/{id}/edit")
-    public String viewEditForm(@PathVariable Long id, Model view)
-    {
-        view.addAttribute("ads", userDao.getById(id));
-        return "orders/edit";
-    }
+//
+//    @GetMapping("/show/{id}/edit")
+//    public String viewEditForm(@PathVariable Long id, Model view)
+//    {
+//        view.addAttribute("ads", userDao.getById(id));
+//        return "orders/edit";
+//    }
 
 //    @PostMapping("show/{id}/edit")
 //    public String updateOrder(@PathVariable long id, @ModelAttribute Order orderToUpdate){
@@ -94,20 +94,20 @@ public class UserController {
 //        return "redirect:/show" + orderToUpdate.getOrderNumber();
 //    }
 
-    @GetMapping("show/{id}/delete")
-    public String showdelete(@PathVariable Long id, Model view)
-    {
-        view.addAttribute("ads", userDao.getById(id));
-        return "orders/delete";
-    }
-
-    @PostMapping("show/{id}/delete")
-    public String deleteOrder(@PathVariable Long id)
-    {
-        user user = userDao.getById(id);
-        userDao.delete(user);
-        return "redirect:/show";
-    }
+//    @GetMapping("show/{id}/delete")
+//    public String showdelete(@PathVariable Long id, Model view)
+//    {
+//        view.addAttribute("ads", userDao.getById(id));
+//        return "orders/delete";
+//    }
+//
+//    @PostMapping("show/{id}/delete")
+//    public String deleteOrder(@PathVariable Long id)
+//    {
+//        user user = userDao.getById(id);
+//        userDao.delete(user);
+//        return "redirect:/show";
+//    }
 
     private void CODETALK()
     {
@@ -123,10 +123,10 @@ public class UserController {
     };
     /////////////// Create Controllers
 
-    @GetMapping("/create")
-    public String IndexForCreate(){
-        return"orders/create";
-    }
+//    @GetMapping("/create")
+//    public String IndexForCreate(){
+//        return"orders/create";
+//    }
 
     @PostMapping("/create")
     public String addNewOrder(@RequestParam(name="email") String email, @RequestParam(name="totalPrice") Double totalPrice){
@@ -148,8 +148,8 @@ public class UserController {
                          @RequestParam(name = "userName") String userName,
                          @RequestParam(name = "email") String email,
                          @RequestParam(name = "passwordHash") String passwordHash,
-                         @RequestParam(name = "registeredAt") Timestamp registeredAt,
-                         @RequestParam(name = "lastLogin") Timestamp lastLogin,
+//                         @RequestParam(name = "registeredAt") Timestamp registeredAt,
+//                         @RequestParam(name = "lastLogin") Timestamp lastLogin,
                          @RequestParam(name = "intro") String intro,
                          @RequestParam(name = "profile") String profile,
                          @RequestParam(name = "mobile") long mobile,
@@ -200,7 +200,7 @@ public class UserController {
 
 
 //        user user = userDao.getById(1l);
-        user newUser = new user(firstName,middleName,lastName, userName,email,passwordHash,registeredAt,lastLogin,intro,profile,mobile, owner);
+        user newUser = new user(firstName,middleName,lastName, userName,email,passwordHash,intro,profile,mobile, owner);
 
         // We need to do our sets
         newUser.setFirstName(firstName);
@@ -210,15 +210,15 @@ public class UserController {
         newUser.setPasswordHash(passwordHash);
 
         user saveNewUser = userDao.save(newUser);
-        return "redirect:/home" + saveNewUser.getId();
+        return "redirect:/UsersHome" + saveNewUser.getId();
     }
 
 
-    @GetMapping("/showUsers")
-    public String showUsers(Model viewallusers)
-    {
-        viewallusers.addAttribute("allusers", userDao.findAll());
-        return "admin/showAllusers";
-
-    }
+//    @GetMapping("/showUsers")
+//    public String showUsers(Model viewallusers)
+//    {
+//        viewallusers.addAttribute("allusers", userDao.findAll());
+//        return "admin/showAllusers";
+//
+//    }
 }

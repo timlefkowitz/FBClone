@@ -19,14 +19,14 @@ public class ProfileController{
     []
      */
 
-    private final UsersRepository userDao;
-
-    private final UserProfileRepository usersProfileDao;
-
-    public ProfileController(UsersRepository userDao, UserProfileRepository usersProfileDao) {
-        this.userDao = userDao;
-        this.usersProfileDao = usersProfileDao;
-    }
+//    private final UsersRepository userDao;
+//
+//    private final UserProfileRepository usersProfileDao;
+//
+//    public ProfileController(UsersRepository userDao, UserProfileRepository usersProfileDao) {
+//        this.userDao = userDao;
+//        this.usersProfileDao = usersProfileDao;
+//    }
 
 
 
@@ -44,27 +44,27 @@ public class ProfileController{
 
     // Show Constructors
 
-    @GetMapping("/show")
-    public String show(Model view){
-        view.addAttribute("ads", userDao.findAll());
-        return"orders/show";
-    }
-
-    @GetMapping("/show/{id}")
-    public String showById(@PathVariable Long id, Model view){
-        view.addAttribute("ads", userDao.getById(id));
-        return "orders/show";
-    }
+//    @GetMapping("/show")
+//    public String show(Model view){
+//        view.addAttribute("ads", userDao.findAll());
+//        return"orders/show";
+//    }
+//
+//    @GetMapping("/show/{id}")
+//    public String showById(@PathVariable Long id, Model view){
+//        view.addAttribute("ads", userDao.getById(id));
+//        return "orders/show";
+//    }
 
 
     // Edit Constructors
 
-    @GetMapping("/show/{id}/edit")
-    public String viewEditForm(@PathVariable Long id, Model view)
-    {
-        view.addAttribute("ads", userDao.getById(id));
-        return "orders/edit";
-    }
+//    @GetMapping("/show/{id}/edit")
+//    public String viewEditForm(@PathVariable Long id, Model view)
+//    {
+//        view.addAttribute("ads", userDao.getById(id));
+//        return "orders/edit";
+//    }
 
 //    @PostMapping("show/{id}/edit")
 //    public String updateOrder(@PathVariable long id, @ModelAttribute UsersRepository profileToUpdate){
@@ -72,12 +72,12 @@ public class ProfileController{
 //        return "redirect:/show";
 //    }
 
-    @GetMapping("show/{id}/delete")
-    public String showdelete(@PathVariable Long id, Model view)
-    {
-        view.addAttribute("ads", userDao.getById(id));
-        return "orders/delete";
-    }
+//    @GetMapping("show/{id}/delete")
+//    public String showdelete(@PathVariable Long id, Model view)
+//    {
+//        view.addAttribute("ads", userDao.getById(id));
+//        return "orders/delete";
+//    }
 
 //    @PostMapping("show/{id}/delete")
 //    public String deleteOrder(@PathVariable Long id)
@@ -90,10 +90,10 @@ public class ProfileController{
 
     /////////////// Create Controllers
 
-    @GetMapping("/create")
-    public String IndexForCreate(){
-        return"orders/create";
-    }
+//    @GetMapping("/create")
+//    public String IndexForCreate(){
+//        return"orders/create";
+//    }
 
 //    @PostMapping("/create")
 //    public String addNewOrder(@RequestParam(name="email") String email, @RequestParam(name="totalPrice") Double totalPrice){
