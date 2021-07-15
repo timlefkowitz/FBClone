@@ -66,11 +66,10 @@ public class UserController {
 
     // Show Constructors
 
-//    @GetMapping("/show")
-//    public String show(Model view){
-//        view.addAttribute("ads", userDao.findAll());
-//        return"orders/show";
-//    }
+    @GetMapping("/index")
+    public String show(Model view){
+        return"index";
+    }
 //
 //    @GetMapping("/show/{id}")
 //    public String showById(@PathVariable Long id, Model view){
